@@ -17,21 +17,20 @@ TODO
 ## 🧠 Methods
 
 ### Named Entity Recognition (NER)
-Quick Comparison
+TODO : Will pick one of them
 
 | Tool | Default Schema | # of Types | Granularity | Key Feature |
 | :--- | :--- | :--- | :--- | :--- |
-| **Stanford NER** | Stanford 3/4/7-Class | 3, 4, or 7 | Coarse | The "Classic" Java baseline. |
-| **spaCy** | OntoNotes 5.0 | 18 | Coarse+ | Fast, Python-native industry standard. |
-| **Stanza** | OntoNotes 5.0 | 18 | Coarse+ | High-accuracy standard NER. |
-| **NameTag 3** | OntoNotes 5.0 (Eng) | 18 | Coarse+ | **SOTA** for *Nested* entities & Multilingual. |
+| **Stanford NER** | Stanford 3/4/7-Class | 3, 4, or 7 | Coarse | Baseline |
+| **spaCy** | OntoNotes 5.0 | 18 | Semi | Python |
+| **Stanza** | OntoNotes 5.0 | 18 | Semi | - |
+| **NameTag 3** | OntoNotes 5.0 (Eng) | 18 | Semi | **SOTA** for *Nested* entities & Multilingual. |
 | **FIGER** | FIGER System | 112 | Fine | Hierarchical (e.g., `/person/politician`). |
-| **GLiNER** | **Open Vocabulary** | $\infty$ | **Custom** | Zero-shot; you define the list yourself. |
+| **GLiNER** | **Open Vocabulary** | $\infty$ | **Custom** | Zero-shot, can be customized. |
 
 ---
 
 #### 1. Stanford NER (The Classic)
-Stanford NER offers pre-trained models with 3 specific levels of granularity. It does not support fine-grained typing by default.
 
 * **3-Class Model:** `PERSON`, `ORGANIZATION`, `LOCATION`
 * **4-Class Model:** `PERSON`, `ORGANIZATION`, `LOCATION`, `MISC`
@@ -45,7 +44,7 @@ Stanford NER offers pre-trained models with 3 specific levels of granularity. It
     * `TIME`
 
 #### 2. spaCy & Stanza (The Industry Standard)
-Both tools utilize the **OntoNotes 5.0** corpus for their large English models (`en_core_web_trf` / `en`). This provides 18 flat categories.
+Both tools utilize the **OntoNotes 5.0** corpus for their large English models (`en_core_web_trf` / `en`). This provides **18 flat categories**.
 
 **The 18 Types:**
 * **PEOPLE:** `PERSON` (People, including fictional)
@@ -61,19 +60,14 @@ Both tools utilize the **OntoNotes 5.0** corpus for their large English models (
 * **NUMERIC/TEMPORAL:** `DATE`, `TIME`, `PERCENT`, `MONEY`, `QUANTITY`, `ORDINAL`, `CARDINAL`
 
 #### 3. NameTag 3 (The Modern SOTA)
-[NameTag 3](https://github.com/ufal/nametag3) is a state-of-the-art tool (2024/2025) capable of **Nested NER** (detecting entities inside other entities).
+[NameTag 3](https://github.com/ufal/nametag3) is ACL Proceeding in 2025 and multilingual.
 
 **English Models:**
 * **OntoNotes Model (Recommended):** Supports the same **18 types** listed above for spaCy.
 * **CoNLL Model:** Supports the basic **4 types** (`PER`, `ORG`, `LOC`, `MISC`).
 
-**Why use it?** Unlike spaCy, NameTag 3 can handle nested structures like:
-> *"[University of [California]]"*
-> * `University of California` -> `ORG`
-> * `California` -> `GPE`
-
-#### 4. FIGER (The "A-Grade" Fine-Grained Standard)
-FIGER is a dataset and taxonomy designed specifically for fine-grained analysis. It uses a **2-level hierarchy** with **112 types**.
+#### 4. FIGER
+FIGER has a **2-level hierarchy** with **112 types**.
 
 **Common Examples (Level 1 / Level 2):**
 * `/person` -> `/person/politician`, `/person/athlete`, `/person/actor`, `/person/author`
@@ -117,5 +111,5 @@ labels = ["Politician", "Start-up", "Algorithm", "Food Ingredient"]
 ## Tools
 
 - Python  
-- spaCy, Stanza, NameTag 3  
+- TODO: Select an NER 
 - BLINK (Meta AI)
