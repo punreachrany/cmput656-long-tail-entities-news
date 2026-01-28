@@ -83,13 +83,14 @@ FIGER is a dataset and taxonomy designed specifically for fine-grained analysis.
 * `/product` -> `/product/software`, `/product/engine`
 * `/building` -> `/building/hospital`, `/building/library`
 
-#### 5. GLiNER (The Zero-Shot Game Changer)
+#### 5. GLiNER
 GLiNER does **not** have a default list. It uses a "Prompt-based" approach where you provide the list of labels at runtime.
 
 **How to use it:**
 You define a Python list with *any* strings you want:
 ```python
 labels = ["Politician", "Start-up", "Algorithm", "Food Ingredient"]
+```
 
 
 ### Entity Linking (EL)
