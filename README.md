@@ -17,18 +17,7 @@ TODO
 ## 🧠 Methods
 
 ### Named Entity Recognition (NER)
-Ideally, NER that can extract entities and has about 20-30 subtypes
-# Default Subtypes / Taxonomy
-# 🏷️ NER Taxonomy Reference Guide
-
-> **Project:** Fine-Grained Entity Analysis
-> **Purpose:** Reference documentation for Named Entity Recognition (NER) tag sets.
-
-This document outlines the default "Subtypes" (Taxonomies) used by the major NER tools evaluated for this project. It contrasts **Coarse-Grained** industry standards (like spaCy) with **Fine-Grained** academic standards (like FIGER) and **Open-Vocabulary** modern tools (like GLiNER).
-
----
-
-## ⚡ Quick Comparison
+Quick Comparison
 
 | Tool | Default Schema | # of Types | Granularity | Key Feature |
 | :--- | :--- | :--- | :--- | :--- |
@@ -41,9 +30,7 @@ This document outlines the default "Subtypes" (Taxonomies) used by the major NER
 
 ---
 
-## 📚 Detailed Taxonomy Breakdown
-
-### 1. Stanford NER (The Classic)
+#### 1. Stanford NER (The Classic)
 Stanford NER offers pre-trained models with 3 specific levels of granularity. It does not support fine-grained typing by default.
 
 * **3-Class Model:** `PERSON`, `ORGANIZATION`, `LOCATION`
@@ -57,7 +44,7 @@ Stanford NER offers pre-trained models with 3 specific levels of granularity. It
     * `DATE`
     * `TIME`
 
-### 2. spaCy & Stanza (The Industry Standard)
+#### 2. spaCy & Stanza (The Industry Standard)
 Both tools utilize the **OntoNotes 5.0** corpus for their large English models (`en_core_web_trf` / `en`). This provides 18 flat categories.
 
 **The 18 Types:**
@@ -73,7 +60,7 @@ Both tools utilize the **OntoNotes 5.0** corpus for their large English models (
 * **LANG:** `LANGUAGE` (Any named language)
 * **NUMERIC/TEMPORAL:** `DATE`, `TIME`, `PERCENT`, `MONEY`, `QUANTITY`, `ORDINAL`, `CARDINAL`
 
-### 3. NameTag 3 (The Modern SOTA)
+#### 3. NameTag 3 (The Modern SOTA)
 [NameTag 3](https://github.com/ufal/nametag3) is a state-of-the-art tool (2024/2025) capable of **Nested NER** (detecting entities inside other entities).
 
 **English Models:**
@@ -85,7 +72,7 @@ Both tools utilize the **OntoNotes 5.0** corpus for their large English models (
 > * `University of California` -> `ORG`
 > * `California` -> `GPE`
 
-### 4. FIGER (The "A-Grade" Fine-Grained Standard)
+#### 4. FIGER (The "A-Grade" Fine-Grained Standard)
 FIGER is a dataset and taxonomy designed specifically for fine-grained analysis. It uses a **2-level hierarchy** with **112 types**.
 
 **Common Examples (Level 1 / Level 2):**
@@ -96,7 +83,7 @@ FIGER is a dataset and taxonomy designed specifically for fine-grained analysis.
 * `/product` -> `/product/software`, `/product/engine`
 * `/building` -> `/building/hospital`, `/building/library`
 
-### 5. GLiNER (The Zero-Shot Game Changer)
+#### 5. GLiNER (The Zero-Shot Game Changer)
 GLiNER does **not** have a default list. It uses a "Prompt-based" approach where you provide the list of labels at runtime.
 
 **How to use it:**
