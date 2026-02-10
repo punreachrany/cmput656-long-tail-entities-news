@@ -1,0 +1,2280 @@
+[
+  {
+    "title":"Worcester breakfast club for veterans gives hunger its marching orders",
+    "entities":[
+      {
+        "start":0,
+        "end":24,
+        "text":"Worcester breakfast club",
+        "label":"organization",
+        "score":0.7304755449
+      },
+      {
+        "start":44,
+        "end":50,
+        "text":"hunger",
+        "label":"title",
+        "score":0.5396812558
+      }
+    ]
+  },
+  {
+    "title":"Jumpshot Gives Marketers Renewed Visibility Into Paid and Organic Keywords With Launch of Jumpshot Elite",
+    "entities":[
+      {
+        "start":0,
+        "end":8,
+        "text":"Jumpshot",
+        "label":"product",
+        "score":0.8130626678
+      },
+      {
+        "start":15,
+        "end":24,
+        "text":"Marketers",
+        "label":"person",
+        "score":0.870415628
+      },
+      {
+        "start":90,
+        "end":98,
+        "text":"Jumpshot",
+        "label":"product",
+        "score":0.8261033893
+      }
+    ]
+  },
+  {
+    "title":"The Return Of The Nike Air Max Sensation Has 80’s Babies Hyped!",
+    "entities":[
+      {
+        "start":18,
+        "end":40,
+        "text":"Nike Air Max Sensation",
+        "label":"brand",
+        "score":0.5884798169
+      }
+    ]
+  },
+  {
+    "title":"This New Dating App Will Ruin Your Internet Game",
+    "entities":[
+      {
+        "start":9,
+        "end":19,
+        "text":"Dating App",
+        "label":"product",
+        "score":0.9274286628
+      },
+      {
+        "start":35,
+        "end":48,
+        "text":"Internet Game",
+        "label":"product",
+        "score":0.8305165768
+      }
+    ]
+  },
+  {
+    "title":"Pay up or face legal action: DBKL",
+    "entities":[
+      {
+        "start":15,
+        "end":27,
+        "text":"legal action",
+        "label":"law",
+        "score":0.7777362466
+      },
+      {
+        "start":29,
+        "end":33,
+        "text":"DBKL",
+        "label":"organization",
+        "score":0.8411721587
+      }
+    ]
+  },
+  {
+    "title":"Euro up; USD, Pound and Yen down",
+    "entities":[
+      {
+        "start":0,
+        "end":4,
+        "text":"Euro",
+        "label":"currency",
+        "score":0.9109153748
+      },
+      {
+        "start":9,
+        "end":12,
+        "text":"USD",
+        "label":"currency",
+        "score":0.9293107986
+      },
+      {
+        "start":14,
+        "end":19,
+        "text":"Pound",
+        "label":"currency",
+        "score":0.9380742311
+      },
+      {
+        "start":24,
+        "end":27,
+        "text":"Yen",
+        "label":"currency",
+        "score":0.9500628114
+      }
+    ]
+  },
+  {
+    "title":"THE INFLUENCE OF OUR WORDS",
+    "entities":[
+
+    ]
+  },
+  {
+    "title":"Hands on with Apple's iPhone 6s, iPad Pro and Apple TV",
+    "entities":[
+      {
+        "start":14,
+        "end":19,
+        "text":"Apple",
+        "label":"brand",
+        "score":0.9038721919
+      },
+      {
+        "start":22,
+        "end":31,
+        "text":"iPhone 6s",
+        "label":"product",
+        "score":0.9912023544
+      },
+      {
+        "start":33,
+        "end":41,
+        "text":"iPad Pro",
+        "label":"product",
+        "score":0.9957697392
+      },
+      {
+        "start":46,
+        "end":54,
+        "text":"Apple TV",
+        "label":"product",
+        "score":0.9757815003
+      }
+    ]
+  },
+  {
+    "title":"Harwood Feffer LLP Announces Investigation of VASCO Data Security International, Inc.",
+    "entities":[
+      {
+        "start":0,
+        "end":18,
+        "text":"Harwood Feffer LLP",
+        "label":"organization",
+        "score":0.8948897719
+      },
+      {
+        "start":46,
+        "end":85,
+        "text":"VASCO Data Security International, Inc.",
+        "label":"organization",
+        "score":0.9744423628
+      }
+    ]
+  },
+  {
+    "title":"What will happen to Peta Credlin and Brian Loughnane, Liberal power couple?",
+    "entities":[
+      {
+        "start":20,
+        "end":32,
+        "text":"Peta Credlin",
+        "label":"person",
+        "score":0.9968701005
+      },
+      {
+        "start":37,
+        "end":52,
+        "text":"Brian Loughnane",
+        "label":"person",
+        "score":0.9908411503
+      },
+      {
+        "start":54,
+        "end":61,
+        "text":"Liberal",
+        "label":"political_party",
+        "score":0.7853918076
+      }
+    ]
+  },
+  {
+    "title":"2015’s Opening Game Predictions",
+    "entities":[
+
+    ]
+  },
+  {
+    "title":"Semtech (SMTC) Trading Near $17.29 Resistance Level",
+    "entities":[
+      {
+        "start":0,
+        "end":7,
+        "text":"Semtech",
+        "label":"organization",
+        "score":0.8714933395
+      },
+      {
+        "start":9,
+        "end":13,
+        "text":"SMTC",
+        "label":"organization",
+        "score":0.6919547915
+      },
+      {
+        "start":28,
+        "end":34,
+        "text":"$17.29",
+        "label":"money",
+        "score":0.7859550118
+      },
+      {
+        "start":35,
+        "end":51,
+        "text":"Resistance Level",
+        "label":"title",
+        "score":0.7641483545
+      }
+    ]
+  },
+  {
+    "title":"New Hillary Clinton email chain discovered",
+    "entities":[
+      {
+        "start":4,
+        "end":19,
+        "text":"Hillary Clinton",
+        "label":"person",
+        "score":0.9808441997
+      }
+    ]
+  },
+  {
+    "title":"Former pitcher Andujar dies at 62",
+    "entities":[
+      {
+        "start":15,
+        "end":22,
+        "text":"Andujar",
+        "label":"person",
+        "score":0.9843760729
+      },
+      {
+        "start":31,
+        "end":33,
+        "text":"62",
+        "label":"ordinal",
+        "score":0.8460361958
+      }
+    ]
+  },
+  {
+    "title":"Five key plays from Texas State's home opener",
+    "entities":[
+      {
+        "start":20,
+        "end":31,
+        "text":"Texas State",
+        "label":"organization",
+        "score":0.8636935353
+      },
+      {
+        "start":34,
+        "end":45,
+        "text":"home opener",
+        "label":"event",
+        "score":0.9165214896
+      }
+    ]
+  },
+  {
+    "title":"Police chiefs warn ministers Were too broke to go on the beat",
+    "entities":[
+      {
+        "start":0,
+        "end":13,
+        "text":"Police chiefs",
+        "label":"person",
+        "score":0.814766109
+      },
+      {
+        "start":19,
+        "end":28,
+        "text":"ministers",
+        "label":"person",
+        "score":0.9144405127
+      },
+      {
+        "start":57,
+        "end":61,
+        "text":"beat",
+        "label":"location",
+        "score":0.7688521743
+      }
+    ]
+  },
+  {
+    "title":"MY TAKE ON THIS: Politicians should give us a break on empty promises",
+    "entities":[
+      {
+        "start":17,
+        "end":28,
+        "text":"Politicians",
+        "label":"person",
+        "score":0.9133336544
+      }
+    ]
+  },
+  {
+    "title":"The Tom and Jerry Show: 'PM; Watson will run the Labour show while 'President' Corbyn carries on campaigning",
+    "entities":[
+      {
+        "start":0,
+        "end":22,
+        "text":"The Tom and Jerry Show",
+        "label":"work_of_art",
+        "score":0.7347024679
+      },
+      {
+        "start":25,
+        "end":27,
+        "text":"PM",
+        "label":"title",
+        "score":0.782799542
+      },
+      {
+        "start":29,
+        "end":35,
+        "text":"Watson",
+        "label":"person",
+        "score":0.9683179259
+      },
+      {
+        "start":49,
+        "end":55,
+        "text":"Labour",
+        "label":"political_party",
+        "score":0.9873988628
+      },
+      {
+        "start":68,
+        "end":77,
+        "text":"President",
+        "label":"title",
+        "score":0.9373494387
+      },
+      {
+        "start":79,
+        "end":85,
+        "text":"Corbyn",
+        "label":"person",
+        "score":0.9637994766
+      }
+    ]
+  },
+  {
+    "title":"Sheriff's department says San...",
+    "entities":[
+      {
+        "start":0,
+        "end":20,
+        "text":"Sheriff's department",
+        "label":"organization",
+        "score":0.9092396498
+      },
+      {
+        "start":26,
+        "end":29,
+        "text":"San",
+        "label":"language",
+        "score":0.9594419003
+      }
+    ]
+  },
+  {
+    "title":"Thanking Research and Hope honorees for their efforts fighting cancer",
+    "entities":[
+      {
+        "start":9,
+        "end":26,
+        "text":"Research and Hope",
+        "label":"organization",
+        "score":0.9551743865
+      },
+      {
+        "start":27,
+        "end":35,
+        "text":"honorees",
+        "label":"person",
+        "score":0.6065528989
+      },
+      {
+        "start":63,
+        "end":69,
+        "text":"cancer",
+        "label":"disease",
+        "score":0.9721154571
+      }
+    ]
+  },
+  {
+    "title":"PINK SLAMS DEMI?!",
+    "entities":[
+
+    ]
+  },
+  {
+    "title":"Bayern Munich's Arjen Robben Sidelined With Groin Injury",
+    "entities":[
+      {
+        "start":0,
+        "end":13,
+        "text":"Bayern Munich",
+        "label":"organization",
+        "score":0.6056962013
+      },
+      {
+        "start":16,
+        "end":28,
+        "text":"Arjen Robben",
+        "label":"person",
+        "score":0.9749571085
+      },
+      {
+        "start":44,
+        "end":56,
+        "text":"Groin Injury",
+        "label":"work_of_art",
+        "score":0.6241319776
+      }
+    ]
+  },
+  {
+    "title":"Potts Law Firm Files 90 New GM Ignition Switch Claims in St. Louis",
+    "entities":[
+      {
+        "start":0,
+        "end":14,
+        "text":"Potts Law Firm",
+        "label":"organization",
+        "score":0.9477946162
+      },
+      {
+        "start":21,
+        "end":23,
+        "text":"90",
+        "label":"quantity",
+        "score":0.743539989
+      },
+      {
+        "start":28,
+        "end":46,
+        "text":"GM Ignition Switch",
+        "label":"product",
+        "score":0.9189667702
+      },
+      {
+        "start":57,
+        "end":66,
+        "text":"St. Louis",
+        "label":"location",
+        "score":0.9823225141
+      }
+    ]
+  },
+  {
+    "title":"Coalition’s Shorten dividend",
+    "entities":[
+      {
+        "start":0,
+        "end":9,
+        "text":"Coalition",
+        "label":"organization",
+        "score":0.7660608292
+      },
+      {
+        "start":12,
+        "end":28,
+        "text":"Shorten dividend",
+        "label":"award",
+        "score":0.8489454389
+      }
+    ]
+  },
+  {
+    "title":"It's a Mad world at the Melbourne Bar, as long as you're a man",
+    "entities":[
+      {
+        "start":7,
+        "end":16,
+        "text":"Mad world",
+        "label":"title",
+        "score":0.5538786054
+      },
+      {
+        "start":24,
+        "end":37,
+        "text":"Melbourne Bar",
+        "label":"location",
+        "score":0.9523062706
+      },
+      {
+        "start":59,
+        "end":62,
+        "text":"man",
+        "label":"person",
+        "score":0.9040726423
+      }
+    ]
+  },
+  {
+    "title":"Survivor Upset Use of 'Eye of the Tiger' With Kim Davis",
+    "entities":[
+      {
+        "start":23,
+        "end":39,
+        "text":"Eye of the Tiger",
+        "label":"work_of_art",
+        "score":0.9425518513
+      },
+      {
+        "start":46,
+        "end":55,
+        "text":"Kim Davis",
+        "label":"person",
+        "score":0.9878038168
+      }
+    ]
+  },
+  {
+    "title":"Iran Parliament Chief: Nuclear Deal Is 'Acceptable,' U.S. Interpretation Is Not",
+    "entities":[
+      {
+        "start":23,
+        "end":35,
+        "text":"Nuclear Deal",
+        "label":"event",
+        "score":0.9655768275
+      }
+    ]
+  },
+  {
+    "title":"Meredith and Walt Disney are big market movers",
+    "entities":[
+      {
+        "start":0,
+        "end":8,
+        "text":"Meredith",
+        "label":"person",
+        "score":0.9742349386
+      },
+      {
+        "start":13,
+        "end":24,
+        "text":"Walt Disney",
+        "label":"person",
+        "score":0.9479581714
+      }
+    ]
+  },
+  {
+    "title":"Weleda Announces Partnership Benefiting Whole Kids Foundation",
+    "entities":[
+      {
+        "start":0,
+        "end":6,
+        "text":"Weleda",
+        "label":"organization",
+        "score":0.6608150005
+      },
+      {
+        "start":40,
+        "end":61,
+        "text":"Whole Kids Foundation",
+        "label":"organization",
+        "score":0.9254614115
+      }
+    ]
+  },
+  {
+    "title":"America's Most Expensive Rental Markets",
+    "entities":[
+      {
+        "start":0,
+        "end":39,
+        "text":"America's Most Expensive Rental Markets",
+        "label":"organization",
+        "score":0.8807538748
+      }
+    ]
+  },
+  {
+    "title":"NHS patients to be given option of travelling to Calais for surgical procedures",
+    "entities":[
+      {
+        "start":0,
+        "end":3,
+        "text":"NHS",
+        "label":"organization",
+        "score":0.935002923
+      },
+      {
+        "start":4,
+        "end":12,
+        "text":"patients",
+        "label":"person",
+        "score":0.8359382749
+      },
+      {
+        "start":49,
+        "end":55,
+        "text":"Calais",
+        "label":"location",
+        "score":0.9951767921
+      },
+      {
+        "start":60,
+        "end":79,
+        "text":"surgical procedures",
+        "label":"facility",
+        "score":0.9082511663
+      }
+    ]
+  },
+  {
+    "title":"Local Happenings: Danville's Village Theatre presenting \"Streetcar Named Desire\" stage performance, film screening",
+    "entities":[
+      {
+        "start":0,
+        "end":16,
+        "text":"Local Happenings",
+        "label":"event",
+        "score":0.9030496478
+      },
+      {
+        "start":18,
+        "end":44,
+        "text":"Danville's Village Theatre",
+        "label":"organization",
+        "score":0.8685826659
+      },
+      {
+        "start":57,
+        "end":79,
+        "text":"Streetcar Named Desire",
+        "label":"work_of_art",
+        "score":0.9734689593
+      },
+      {
+        "start":81,
+        "end":98,
+        "text":"stage performance",
+        "label":"event",
+        "score":0.6786676645
+      },
+      {
+        "start":100,
+        "end":114,
+        "text":"film screening",
+        "label":"event",
+        "score":0.870642662
+      }
+    ]
+  },
+  {
+    "title":"Air Waves - Parting Glances (2015)",
+    "entities":[
+      {
+        "start":0,
+        "end":9,
+        "text":"Air Waves",
+        "label":"organization",
+        "score":0.7462640405
+      },
+      {
+        "start":12,
+        "end":27,
+        "text":"Parting Glances",
+        "label":"product",
+        "score":0.6201198697
+      },
+      {
+        "start":29,
+        "end":33,
+        "text":"2015",
+        "label":"date",
+        "score":0.9703295827
+      }
+    ]
+  },
+  {
+    "title":"Can you hear what you're saying?",
+    "entities":[
+
+    ]
+  },
+  {
+    "title":"Cormant Showcases its Array of DCIM Expertise at AFCOMs Fall Data Center World Event in Maryland",
+    "entities":[
+      {
+        "start":0,
+        "end":7,
+        "text":"Cormant",
+        "label":"organization",
+        "score":0.6775881648
+      },
+      {
+        "start":22,
+        "end":45,
+        "text":"Array of DCIM Expertise",
+        "label":"product",
+        "score":0.6699942946
+      },
+      {
+        "start":49,
+        "end":55,
+        "text":"AFCOMs",
+        "label":"organization",
+        "score":0.6433607936
+      },
+      {
+        "start":56,
+        "end":84,
+        "text":"Fall Data Center World Event",
+        "label":"event",
+        "score":0.8681976199
+      },
+      {
+        "start":88,
+        "end":96,
+        "text":"Maryland",
+        "label":"location",
+        "score":0.9902931452
+      }
+    ]
+  },
+  {
+    "title":"Corey Seager's days as the Dodgers' starting shortstop are numbered",
+    "entities":[
+      {
+        "start":0,
+        "end":12,
+        "text":"Corey Seager",
+        "label":"person",
+        "score":0.9891172051
+      },
+      {
+        "start":15,
+        "end":19,
+        "text":"days",
+        "label":"time",
+        "score":0.6598133445
+      },
+      {
+        "start":27,
+        "end":34,
+        "text":"Dodgers",
+        "label":"organization",
+        "score":0.977889061
+      },
+      {
+        "start":36,
+        "end":54,
+        "text":"starting shortstop",
+        "label":"title",
+        "score":0.8284992576
+      }
+    ]
+  },
+  {
+    "title":"Virgin America Offers Free Uber Rides With Every Dallas Love Field Flight* And Brings 'Friday Night Flights' To The Big D",
+    "entities":[
+      {
+        "start":0,
+        "end":14,
+        "text":"Virgin America",
+        "label":"organization",
+        "score":0.9779798985
+      },
+      {
+        "start":27,
+        "end":37,
+        "text":"Uber Rides",
+        "label":"product",
+        "score":0.7979950905
+      },
+      {
+        "start":49,
+        "end":66,
+        "text":"Dallas Love Field",
+        "label":"location",
+        "score":0.652934432
+      },
+      {
+        "start":116,
+        "end":121,
+        "text":"Big D",
+        "label":"location",
+        "score":0.7889077663
+      }
+    ]
+  },
+  {
+    "title":"Caterpillar Still On Hook For $4.5M In Wash. Asbestos Suit",
+    "entities":[
+      {
+        "start":0,
+        "end":25,
+        "text":"Caterpillar Still On Hook",
+        "label":"product",
+        "score":0.6579118967
+      },
+      {
+        "start":30,
+        "end":35,
+        "text":"$4.5M",
+        "label":"money",
+        "score":0.8110598326
+      },
+      {
+        "start":45,
+        "end":58,
+        "text":"Asbestos Suit",
+        "label":"product",
+        "score":0.8402619362
+      }
+    ]
+  },
+  {
+    "title":"Hilo man, 26, charged with theft of county vehicles, ukulele",
+    "entities":[
+      {
+        "start":0,
+        "end":8,
+        "text":"Hilo man",
+        "label":"person",
+        "score":0.8571634889
+      },
+      {
+        "start":10,
+        "end":12,
+        "text":"26",
+        "label":"ordinal",
+        "score":0.5592395067
+      },
+      {
+        "start":36,
+        "end":51,
+        "text":"county vehicles",
+        "label":"vehicle",
+        "score":0.9076564312
+      },
+      {
+        "start":53,
+        "end":60,
+        "text":"ukulele",
+        "label":"vehicle",
+        "score":0.8771260381
+      }
+    ]
+  },
+  {
+    "title":"Lawsuit hovers over AirEvac heliport construction",
+    "entities":[
+      {
+        "start":0,
+        "end":7,
+        "text":"Lawsuit",
+        "label":"law",
+        "score":0.6681411862
+      },
+      {
+        "start":20,
+        "end":27,
+        "text":"AirEvac",
+        "label":"organization",
+        "score":0.8506051898
+      }
+    ]
+  },
+  {
+    "title":"Facebook ready to test button that goes beyond 'like'",
+    "entities":[
+      {
+        "start":0,
+        "end":8,
+        "text":"Facebook",
+        "label":"organization",
+        "score":0.955581665
+      }
+    ]
+  },
+  {
+    "title":"New Inflation Estimates Offer First Look at Impact for Taxpayers in 2016",
+    "entities":[
+      {
+        "start":4,
+        "end":23,
+        "text":"Inflation Estimates",
+        "label":"organization",
+        "score":0.5002818704
+      },
+      {
+        "start":68,
+        "end":72,
+        "text":"2016",
+        "label":"date",
+        "score":0.9731301665
+      }
+    ]
+  },
+  {
+    "title":"Watkins the star in Wormelow awards evening",
+    "entities":[
+      {
+        "start":0,
+        "end":7,
+        "text":"Watkins",
+        "label":"person",
+        "score":0.8518933058
+      },
+      {
+        "start":20,
+        "end":43,
+        "text":"Wormelow awards evening",
+        "label":"event",
+        "score":0.5819634795
+      }
+    ]
+  },
+  {
+    "title":"Calcium supplements 'have little effect on bone health'",
+    "entities":[
+      {
+        "start":0,
+        "end":19,
+        "text":"Calcium supplements",
+        "label":"product",
+        "score":0.8845897317
+      },
+      {
+        "start":43,
+        "end":54,
+        "text":"bone health",
+        "label":"disease",
+        "score":0.8986420631
+      }
+    ]
+  },
+  {
+    "title":"TinderBox Launches TinderBox Signals to Provide Sales Teams, Execs...",
+    "entities":[
+      {
+        "start":0,
+        "end":9,
+        "text":"TinderBox",
+        "label":"product",
+        "score":0.8720460534
+      },
+      {
+        "start":19,
+        "end":28,
+        "text":"TinderBox",
+        "label":"product",
+        "score":0.8058929443
+      },
+      {
+        "start":48,
+        "end":59,
+        "text":"Sales Teams",
+        "label":"person",
+        "score":0.9071989059
+      },
+      {
+        "start":61,
+        "end":66,
+        "text":"Execs",
+        "label":"person",
+        "score":0.9297130108
+      }
+    ]
+  },
+  {
+    "title":"Mailbag: Who Starts At RB? Is The Fifth WR On The Roster Right Now?",
+    "entities":[
+      {
+        "start":0,
+        "end":7,
+        "text":"Mailbag",
+        "label":"organization",
+        "score":0.5621667504
+      },
+      {
+        "start":23,
+        "end":25,
+        "text":"RB",
+        "label":"location",
+        "score":0.6929121017
+      },
+      {
+        "start":50,
+        "end":56,
+        "text":"Roster",
+        "label":"product",
+        "score":0.5052049756
+      }
+    ]
+  },
+  {
+    "title":"Super Fund, Infratil to sell shares in Z Energy",
+    "entities":[
+      {
+        "start":0,
+        "end":10,
+        "text":"Super Fund",
+        "label":"award",
+        "score":0.9206172228
+      },
+      {
+        "start":12,
+        "end":20,
+        "text":"Infratil",
+        "label":"organization",
+        "score":0.8692541718
+      },
+      {
+        "start":29,
+        "end":35,
+        "text":"shares",
+        "label":"currency",
+        "score":0.6494117975
+      },
+      {
+        "start":39,
+        "end":47,
+        "text":"Z Energy",
+        "label":"organization",
+        "score":0.90802145
+      }
+    ]
+  },
+  {
+    "title":"Hockey mum on multinational tax revenue",
+    "entities":[
+      {
+        "start":14,
+        "end":39,
+        "text":"multinational tax revenue",
+        "label":"law",
+        "score":0.7827987075
+      }
+    ]
+  },
+  {
+    "title":"“Hybrid” healer for “horrors”",
+    "entities":[
+      {
+        "start":1,
+        "end":7,
+        "text":"Hybrid",
+        "label":"product",
+        "score":0.6629272103
+      },
+      {
+        "start":9,
+        "end":15,
+        "text":"healer",
+        "label":"person",
+        "score":0.6263862848
+      },
+      {
+        "start":21,
+        "end":28,
+        "text":"horrors",
+        "label":"title",
+        "score":0.7491201758
+      }
+    ]
+  },
+  {
+    "title":"Cops quickly nab 2 men in Jersey City car wash attack",
+    "entities":[
+      {
+        "start":0,
+        "end":4,
+        "text":"Cops",
+        "label":"organization",
+        "score":0.7604677081
+      },
+      {
+        "start":17,
+        "end":18,
+        "text":"2",
+        "label":"quantity",
+        "score":0.6835613251
+      },
+      {
+        "start":19,
+        "end":22,
+        "text":"men",
+        "label":"person",
+        "score":0.926029861
+      },
+      {
+        "start":26,
+        "end":37,
+        "text":"Jersey City",
+        "label":"location",
+        "score":0.9709146023
+      },
+      {
+        "start":38,
+        "end":46,
+        "text":"car wash",
+        "label":"facility",
+        "score":0.6466255784
+      },
+      {
+        "start":47,
+        "end":53,
+        "text":"attack",
+        "label":"event",
+        "score":0.5688813329
+      }
+    ]
+  },
+  {
+    "title":"City welcomes Scotland before Rugby World Cup kicks off tomorrow",
+    "entities":[
+      {
+        "start":0,
+        "end":4,
+        "text":"City",
+        "label":"location",
+        "score":0.7906847
+      },
+      {
+        "start":14,
+        "end":22,
+        "text":"Scotland",
+        "label":"location",
+        "score":0.9616193175
+      },
+      {
+        "start":30,
+        "end":45,
+        "text":"Rugby World Cup",
+        "label":"event",
+        "score":0.9861322641
+      },
+      {
+        "start":56,
+        "end":64,
+        "text":"tomorrow",
+        "label":"date",
+        "score":0.9594815373
+      }
+    ]
+  },
+  {
+    "title":"Berra's best World Series unrewarded",
+    "entities":[
+      {
+        "start":13,
+        "end":25,
+        "text":"World Series",
+        "label":"event",
+        "score":0.992159903
+      }
+    ]
+  },
+  {
+    "title":"Whitemoor prisoner 'kept in solitary for more than two years'",
+    "entities":[
+      {
+        "start":0,
+        "end":18,
+        "text":"Whitemoor prisoner",
+        "label":"person",
+        "score":0.6117978692
+      },
+      {
+        "start":28,
+        "end":36,
+        "text":"solitary",
+        "label":"facility",
+        "score":0.8882620931
+      },
+      {
+        "start":51,
+        "end":60,
+        "text":"two years",
+        "label":"time",
+        "score":0.9379678965
+      }
+    ]
+  },
+  {
+    "title":"Jackson meets with Seattle",
+    "entities":[
+      {
+        "start":0,
+        "end":7,
+        "text":"Jackson",
+        "label":"person",
+        "score":0.975839138
+      },
+      {
+        "start":19,
+        "end":26,
+        "text":"Seattle",
+        "label":"location",
+        "score":0.988727808
+      }
+    ]
+  },
+  {
+    "title":"Deputies testify in trial of Los Alamos standoff suspect",
+    "entities":[
+      {
+        "start":0,
+        "end":8,
+        "text":"Deputies",
+        "label":"person",
+        "score":0.8130441904
+      },
+      {
+        "start":20,
+        "end":25,
+        "text":"trial",
+        "label":"event",
+        "score":0.7617935538
+      },
+      {
+        "start":29,
+        "end":39,
+        "text":"Los Alamos",
+        "label":"location",
+        "score":0.8538492918
+      }
+    ]
+  },
+  {
+    "title":"IPS gaming monitor has great viewing angles",
+    "entities":[
+      {
+        "start":0,
+        "end":18,
+        "text":"IPS gaming monitor",
+        "label":"product",
+        "score":0.8440185785
+      },
+      {
+        "start":29,
+        "end":43,
+        "text":"viewing angles",
+        "label":"quantity",
+        "score":0.5952010155
+      }
+    ]
+  },
+  {
+    "title":"Warmongers declare themselves as God over other human beings – Carl Teichrib",
+    "entities":[
+      {
+        "start":0,
+        "end":10,
+        "text":"Warmongers",
+        "label":"organization",
+        "score":0.6169936657
+      },
+      {
+        "start":33,
+        "end":36,
+        "text":"God",
+        "label":"religion",
+        "score":0.9042158723
+      },
+      {
+        "start":48,
+        "end":60,
+        "text":"human beings",
+        "label":"ethnic_group",
+        "score":0.8448562622
+      },
+      {
+        "start":63,
+        "end":76,
+        "text":"Carl Teichrib",
+        "label":"person",
+        "score":0.9614116549
+      }
+    ]
+  },
+  {
+    "title":"Student Rocketeers Wanted for World’s Largest Rocket Competition 2015-2016",
+    "entities":[
+      {
+        "start":30,
+        "end":64,
+        "text":"World’s Largest Rocket Competition",
+        "label":"event",
+        "score":0.6269019246
+      },
+      {
+        "start":65,
+        "end":74,
+        "text":"2015-2016",
+        "label":"date",
+        "score":0.7746148705
+      }
+    ]
+  },
+  {
+    "title":"How Did Trump Do in the Debate?",
+    "entities":[
+      {
+        "start":8,
+        "end":13,
+        "text":"Trump",
+        "label":"person",
+        "score":0.9164815545
+      },
+      {
+        "start":24,
+        "end":30,
+        "text":"Debate",
+        "label":"event",
+        "score":0.9714425206
+      }
+    ]
+  },
+  {
+    "title":"Nixing cosmetic repairs could lower property ins.",
+    "entities":[
+      {
+        "start":7,
+        "end":23,
+        "text":"cosmetic repairs",
+        "label":"product",
+        "score":0.6203541756
+      }
+    ]
+  },
+  {
+    "title":"Pluto coming out of Retrograde!",
+    "entities":[
+      {
+        "start":20,
+        "end":30,
+        "text":"Retrograde",
+        "label":"cardinal",
+        "score":0.7041303515
+      }
+    ]
+  },
+  {
+    "title":"UPDATE 1-German president warns of limits to number of refugees",
+    "entities":[
+      {
+        "start":16,
+        "end":25,
+        "text":"president",
+        "label":"person",
+        "score":0.5835815072
+      },
+      {
+        "start":45,
+        "end":51,
+        "text":"number",
+        "label":"quantity",
+        "score":0.6049929857
+      },
+      {
+        "start":55,
+        "end":63,
+        "text":"refugees",
+        "label":"ethnic_group",
+        "score":0.9194514751
+      }
+    ]
+  },
+  {
+    "title":"Master Stylist of the Hair Connoisseur's Salon, LLC Helps Clients Achieve Self-Image",
+    "entities":[
+      {
+        "start":0,
+        "end":51,
+        "text":"Master Stylist of the Hair Connoisseur's Salon, LLC",
+        "label":"organization",
+        "score":0.8209396601
+      },
+      {
+        "start":58,
+        "end":65,
+        "text":"Clients",
+        "label":"person",
+        "score":0.6964272857
+      },
+      {
+        "start":74,
+        "end":84,
+        "text":"Self-Image",
+        "label":"product",
+        "score":0.5480629802
+      }
+    ]
+  },
+  {
+    "title":"International Industry Sparks Economic Development Opportunities For Washington County",
+    "entities":[
+      {
+        "start":0,
+        "end":22,
+        "text":"International Industry",
+        "label":"organization",
+        "score":0.6538896561
+      },
+      {
+        "start":69,
+        "end":86,
+        "text":"Washington County",
+        "label":"location",
+        "score":0.9641141891
+      }
+    ]
+  },
+  {
+    "title":"Dancing On Ice skater rapist Joseph Tsang captured in Hong Kong honey trap",
+    "entities":[
+      {
+        "start":0,
+        "end":14,
+        "text":"Dancing On Ice",
+        "label":"organization",
+        "score":0.6466085315
+      },
+      {
+        "start":29,
+        "end":41,
+        "text":"Joseph Tsang",
+        "label":"person",
+        "score":0.9915242195
+      },
+      {
+        "start":54,
+        "end":63,
+        "text":"Hong Kong",
+        "label":"location",
+        "score":0.9951412678
+      },
+      {
+        "start":64,
+        "end":74,
+        "text":"honey trap",
+        "label":"product",
+        "score":0.5443706512
+      }
+    ]
+  },
+  {
+    "title":"No. 4 Baylor shows plenty of offense in 56-21 win at SMU",
+    "entities":[
+      {
+        "start":6,
+        "end":12,
+        "text":"Baylor",
+        "label":"organization",
+        "score":0.989444077
+      },
+      {
+        "start":40,
+        "end":45,
+        "text":"56-21",
+        "label":"ordinal",
+        "score":0.6607243419
+      },
+      {
+        "start":53,
+        "end":56,
+        "text":"SMU",
+        "label":"organization",
+        "score":0.9650299549
+      }
+    ]
+  },
+  {
+    "title":"Services Sector Movers: Twenty-First Century Fox, Inc. (FOXA), Las Vegas Sands Corp. (LVS), American Airlines Group Inc. (AAL), DryShips, Inc. (DRYS), Carnival Corporation (CCL)",
+    "entities":[
+      {
+        "start":24,
+        "end":54,
+        "text":"Twenty-First Century Fox, Inc.",
+        "label":"organization",
+        "score":0.9914999604
+      },
+      {
+        "start":63,
+        "end":84,
+        "text":"Las Vegas Sands Corp.",
+        "label":"organization",
+        "score":0.9896496534
+      },
+      {
+        "start":92,
+        "end":120,
+        "text":"American Airlines Group Inc.",
+        "label":"organization",
+        "score":0.9716109037
+      },
+      {
+        "start":128,
+        "end":142,
+        "text":"DryShips, Inc.",
+        "label":"organization",
+        "score":0.9719814062
+      },
+      {
+        "start":144,
+        "end":148,
+        "text":"DRYS",
+        "label":"organization",
+        "score":0.6253415346
+      },
+      {
+        "start":151,
+        "end":171,
+        "text":"Carnival Corporation",
+        "label":"organization",
+        "score":0.9395976067
+      },
+      {
+        "start":173,
+        "end":176,
+        "text":"CCL",
+        "label":"organization",
+        "score":0.6585549116
+      }
+    ]
+  },
+  {
+    "title":"September 19, 20",
+    "entities":[
+      {
+        "start":0,
+        "end":16,
+        "text":"September 19, 20",
+        "label":"date",
+        "score":0.9424063563
+      }
+    ]
+  },
+  {
+    "title":"Dark and full-bodied does it for me every time",
+    "entities":[
+      {
+        "start":36,
+        "end":46,
+        "text":"every time",
+        "label":"cardinal",
+        "score":0.5020686388
+      }
+    ]
+  },
+  {
+    "title":"TALKING TACTICS: finding the right Plan B",
+    "entities":[
+      {
+        "start":0,
+        "end":15,
+        "text":"TALKING TACTICS",
+        "label":"product",
+        "score":0.54374367
+      },
+      {
+        "start":35,
+        "end":41,
+        "text":"Plan B",
+        "label":"product",
+        "score":0.736222744
+      }
+    ]
+  },
+  {
+    "title":"Week Four Friday Night Lights",
+    "entities":[
+      {
+        "start":0,
+        "end":9,
+        "text":"Week Four",
+        "label":"date",
+        "score":0.8735510707
+      },
+      {
+        "start":10,
+        "end":29,
+        "text":"Friday Night Lights",
+        "label":"event",
+        "score":0.8512928486
+      }
+    ]
+  },
+  {
+    "title":"The Streaming Media Device Landscape",
+    "entities":[
+      {
+        "start":0,
+        "end":36,
+        "text":"The Streaming Media Device Landscape",
+        "label":"organization",
+        "score":0.9104498625
+      }
+    ]
+  },
+  {
+    "title":"September Shape Up!",
+    "entities":[
+      {
+        "start":0,
+        "end":9,
+        "text":"September",
+        "label":"date",
+        "score":0.896181643
+      }
+    ]
+  },
+  {
+    "title":"Mega Buzz: Elementary Returns with Sherlock's Calculating Dad and a Familiar Villain",
+    "entities":[
+      {
+        "start":0,
+        "end":9,
+        "text":"Mega Buzz",
+        "label":"event",
+        "score":0.5738327503
+      },
+      {
+        "start":35,
+        "end":61,
+        "text":"Sherlock's Calculating Dad",
+        "label":"person",
+        "score":0.7804903984
+      },
+      {
+        "start":68,
+        "end":84,
+        "text":"Familiar Villain",
+        "label":"person",
+        "score":0.5955360532
+      }
+    ]
+  },
+  {
+    "title":"Panelists say fewer births, marriages point to global demographic shift",
+    "entities":[
+      {
+        "start":0,
+        "end":9,
+        "text":"Panelists",
+        "label":"person",
+        "score":0.8144533634
+      },
+      {
+        "start":20,
+        "end":26,
+        "text":"births",
+        "label":"event",
+        "score":0.9636805654
+      },
+      {
+        "start":28,
+        "end":37,
+        "text":"marriages",
+        "label":"event",
+        "score":0.9699661732
+      },
+      {
+        "start":47,
+        "end":71,
+        "text":"global demographic shift",
+        "label":"event",
+        "score":0.6694726944
+      }
+    ]
+  },
+  {
+    "title":"20-Sep-2015 02:19",
+    "entities":[
+      {
+        "start":0,
+        "end":17,
+        "text":"20-Sep-2015 02:19",
+        "label":"date",
+        "score":0.5155597925
+      }
+    ]
+  },
+  {
+    "title":"Spennymoor Town must be wary of 'full of confidence' Clitheroe, says Jason Ainsley",
+    "entities":[
+      {
+        "start":0,
+        "end":15,
+        "text":"Spennymoor Town",
+        "label":"location",
+        "score":0.9795703888
+      },
+      {
+        "start":53,
+        "end":62,
+        "text":"Clitheroe",
+        "label":"location",
+        "score":0.9593513012
+      },
+      {
+        "start":69,
+        "end":82,
+        "text":"Jason Ainsley",
+        "label":"person",
+        "score":0.9798714519
+      }
+    ]
+  },
+  {
+    "title":"Shell says it will cease Alaska Arctic exploration, cites disappointing outcome at well",
+    "entities":[
+      {
+        "start":0,
+        "end":5,
+        "text":"Shell",
+        "label":"organization",
+        "score":0.9619633555
+      },
+      {
+        "start":25,
+        "end":38,
+        "text":"Alaska Arctic",
+        "label":"location",
+        "score":0.953288734
+      },
+      {
+        "start":39,
+        "end":50,
+        "text":"exploration",
+        "label":"event",
+        "score":0.6331745386
+      }
+    ]
+  },
+  {
+    "title":"THE OPTIMISTIC FISHERMAN",
+    "entities":[
+      {
+        "start":0,
+        "end":24,
+        "text":"THE OPTIMISTIC FISHERMAN",
+        "label":"person",
+        "score":0.7135717273
+      }
+    ]
+  },
+  {
+    "title":"Video - Jace Hymas 3rd Place - Bob Firman Invitational 2015",
+    "entities":[
+      {
+        "start":8,
+        "end":18,
+        "text":"Jace Hymas",
+        "label":"person",
+        "score":0.967243731
+      },
+      {
+        "start":19,
+        "end":28,
+        "text":"3rd Place",
+        "label":"award",
+        "score":0.8369269371
+      },
+      {
+        "start":31,
+        "end":41,
+        "text":"Bob Firman",
+        "label":"person",
+        "score":0.924741745
+      },
+      {
+        "start":55,
+        "end":59,
+        "text":"2015",
+        "label":"date",
+        "score":0.7515530586
+      }
+    ]
+  },
+  {
+    "title":"Palmer's ex-friend seeks 'promised' cash (AAP)",
+    "entities":[
+      {
+        "start":0,
+        "end":18,
+        "text":"Palmer's ex-friend",
+        "label":"person",
+        "score":0.8478075266
+      },
+      {
+        "start":36,
+        "end":40,
+        "text":"cash",
+        "label":"money",
+        "score":0.7911823988
+      },
+      {
+        "start":42,
+        "end":45,
+        "text":"AAP",
+        "label":"product",
+        "score":0.6042425632
+      }
+    ]
+  },
+  {
+    "title":"Capitals Peters Undergoes ‘Successful’ Knee Surgery",
+    "entities":[
+      {
+        "start":9,
+        "end":15,
+        "text":"Peters",
+        "label":"person",
+        "score":0.9742013216
+      },
+      {
+        "start":39,
+        "end":51,
+        "text":"Knee Surgery",
+        "label":"facility",
+        "score":0.7116135359
+      }
+    ]
+  },
+  {
+    "title":"New Honda Pilot looks smaller, adds interior space",
+    "entities":[
+      {
+        "start":4,
+        "end":15,
+        "text":"Honda Pilot",
+        "label":"vehicle",
+        "score":0.8161393404
+      },
+      {
+        "start":36,
+        "end":50,
+        "text":"interior space",
+        "label":"facility",
+        "score":0.9430462122
+      }
+    ]
+  },
+  {
+    "title":"Garbage thrown at Ahmed’s tour",
+    "entities":[
+
+    ]
+  },
+  {
+    "title":"South Street Seaport is getting a seafood-themed food hall",
+    "entities":[
+      {
+        "start":0,
+        "end":20,
+        "text":"South Street Seaport",
+        "label":"location",
+        "score":0.9638546109
+      },
+      {
+        "start":34,
+        "end":58,
+        "text":"seafood-themed food hall",
+        "label":"facility",
+        "score":0.9091587663
+      }
+    ]
+  },
+  {
+    "title":"Family Day Trip to a Kid-Friendly Long Island Winery",
+    "entities":[
+      {
+        "start":0,
+        "end":15,
+        "text":"Family Day Trip",
+        "label":"event",
+        "score":0.8355029225
+      },
+      {
+        "start":21,
+        "end":52,
+        "text":"Kid-Friendly Long Island Winery",
+        "label":"organization",
+        "score":0.8992350101
+      }
+    ]
+  },
+  {
+    "title":"Dollar weakens in tentative trade ahead of Fed decision",
+    "entities":[
+      {
+        "start":0,
+        "end":6,
+        "text":"Dollar",
+        "label":"currency",
+        "score":0.6795372963
+      },
+      {
+        "start":18,
+        "end":33,
+        "text":"tentative trade",
+        "label":"event",
+        "score":0.5611162186
+      },
+      {
+        "start":43,
+        "end":46,
+        "text":"Fed",
+        "label":"organization",
+        "score":0.9555355906
+      }
+    ]
+  },
+  {
+    "title":"JoJo Is Back With a Sexy New Video, Admits Her 2000s Hits 'Take On a New Meaning' Today",
+    "entities":[
+      {
+        "start":0,
+        "end":4,
+        "text":"JoJo",
+        "label":"person",
+        "score":0.9715326428
+      },
+      {
+        "start":29,
+        "end":34,
+        "text":"Video",
+        "label":"work_of_art",
+        "score":0.6987023354
+      },
+      {
+        "start":47,
+        "end":52,
+        "text":"2000s",
+        "label":"date",
+        "score":0.7781031728
+      },
+      {
+        "start":82,
+        "end":87,
+        "text":"Today",
+        "label":"date",
+        "score":0.5457769632
+      }
+    ]
+  },
+  {
+    "title":"Hong Kong chief executive is not above the executive, judicial and legislative powers - according to the Basic Law",
+    "entities":[
+      {
+        "start":0,
+        "end":9,
+        "text":"Hong Kong",
+        "label":"location",
+        "score":0.9708605409
+      },
+      {
+        "start":16,
+        "end":25,
+        "text":"executive",
+        "label":"title",
+        "score":0.7113745809
+      },
+      {
+        "start":43,
+        "end":52,
+        "text":"executive",
+        "label":"title",
+        "score":0.9254440665
+      },
+      {
+        "start":54,
+        "end":62,
+        "text":"judicial",
+        "label":"title",
+        "score":0.8979094028
+      },
+      {
+        "start":67,
+        "end":78,
+        "text":"legislative",
+        "label":"title",
+        "score":0.8353385329
+      },
+      {
+        "start":105,
+        "end":114,
+        "text":"Basic Law",
+        "label":"law",
+        "score":0.9921465516
+      }
+    ]
+  },
+  {
+    "title":"Sept. 28, 2015, 10pm (PDT) - ETs and You with Author Elizabeth Anglin",
+    "entities":[
+      {
+        "start":0,
+        "end":14,
+        "text":"Sept. 28, 2015",
+        "label":"date",
+        "score":0.9590650201
+      },
+      {
+        "start":16,
+        "end":20,
+        "text":"10pm",
+        "label":"time",
+        "score":0.7122796178
+      },
+      {
+        "start":22,
+        "end":25,
+        "text":"PDT",
+        "label":"time",
+        "score":0.8146820664
+      },
+      {
+        "start":29,
+        "end":40,
+        "text":"ETs and You",
+        "label":"work_of_art",
+        "score":0.5421617627
+      },
+      {
+        "start":53,
+        "end":69,
+        "text":"Elizabeth Anglin",
+        "label":"person",
+        "score":0.9576072693
+      }
+    ]
+  },
+  {
+    "title":"Emmerdale: Natalie Anderson exit interview - Alicia cannot stay in the village",
+    "entities":[
+      {
+        "start":11,
+        "end":27,
+        "text":"Natalie Anderson",
+        "label":"person",
+        "score":0.9724912047
+      },
+      {
+        "start":28,
+        "end":42,
+        "text":"exit interview",
+        "label":"event",
+        "score":0.7230331898
+      },
+      {
+        "start":45,
+        "end":51,
+        "text":"Alicia",
+        "label":"person",
+        "score":0.923556447
+      },
+      {
+        "start":71,
+        "end":78,
+        "text":"village",
+        "label":"location",
+        "score":0.9616001248
+      }
+    ]
+  },
+  {
+    "title":"Is Your Nutrition Cutting It?",
+    "entities":[
+
+    ]
+  },
+  {
+    "title":"With This Answer, Anthony Anderson's Mom Proves You're Never Too Old To Be Embarrassed By Your Parents",
+    "entities":[
+      {
+        "start":18,
+        "end":40,
+        "text":"Anthony Anderson's Mom",
+        "label":"person",
+        "score":0.9302818179
+      },
+      {
+        "start":95,
+        "end":102,
+        "text":"Parents",
+        "label":"person",
+        "score":0.6678072214
+      }
+    ]
+  },
+  {
+    "title":"Awareness on e-roll & registration",
+    "entities":[
+
+    ]
+  },
+  {
+    "title":"Nursery celebrates six years since its opening",
+    "entities":[
+      {
+        "start":0,
+        "end":7,
+        "text":"Nursery",
+        "label":"organization",
+        "score":0.8541287184
+      },
+      {
+        "start":19,
+        "end":28,
+        "text":"six years",
+        "label":"time",
+        "score":0.9502651095
+      },
+      {
+        "start":39,
+        "end":46,
+        "text":"opening",
+        "label":"event",
+        "score":0.7550547123
+      }
+    ]
+  },
+  {
+    "title":"PDP celebrates Nigeria’s delisting from Polio endemic countries",
+    "entities":[
+      {
+        "start":0,
+        "end":3,
+        "text":"PDP",
+        "label":"political_party",
+        "score":0.9854133725
+      },
+      {
+        "start":15,
+        "end":22,
+        "text":"Nigeria",
+        "label":"location",
+        "score":0.975638628
+      },
+      {
+        "start":25,
+        "end":34,
+        "text":"delisting",
+        "label":"event",
+        "score":0.5904797316
+      },
+      {
+        "start":40,
+        "end":45,
+        "text":"Polio",
+        "label":"disease",
+        "score":0.9652397633
+      }
+    ]
+  },
+  {
+    "title":"3 ways rising interest rates can impact businesses",
+    "entities":[
+      {
+        "start":14,
+        "end":28,
+        "text":"interest rates",
+        "label":"currency",
+        "score":0.8473125696
+      },
+      {
+        "start":40,
+        "end":50,
+        "text":"businesses",
+        "label":"organization",
+        "score":0.9729220867
+      }
+    ]
+  },
+  {
+    "title":"Hardison & Cochran Teams Up with Tar Heels Football to Focus on Autism",
+    "entities":[
+      {
+        "start":0,
+        "end":18,
+        "text":"Hardison & Cochran",
+        "label":"person",
+        "score":0.9347447753
+      },
+      {
+        "start":33,
+        "end":51,
+        "text":"Tar Heels Football",
+        "label":"organization",
+        "score":0.9590620399
+      },
+      {
+        "start":64,
+        "end":70,
+        "text":"Autism",
+        "label":"disease",
+        "score":0.9018881917
+      }
+    ]
+  },
+  {
+    "title":"Dark Era, Fantasy-MMORPG Enters Closed Beta",
+    "entities":[
+      {
+        "start":0,
+        "end":8,
+        "text":"Dark Era",
+        "label":"work_of_art",
+        "score":0.7401669025
+      },
+      {
+        "start":10,
+        "end":24,
+        "text":"Fantasy-MMORPG",
+        "label":"work_of_art",
+        "score":0.6945410371
+      }
+    ]
+  },
+  {
+    "title":"9 excellent parenting hacks",
+    "entities":[
+      {
+        "start":12,
+        "end":27,
+        "text":"parenting hacks",
+        "label":"product",
+        "score":0.7222579122
+      }
+    ]
+  }
+]
