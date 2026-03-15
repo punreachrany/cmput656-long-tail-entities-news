@@ -1,1 +1,4 @@
-sample-1M.jsonl
+*.jsonl
+*.json
+*.log
+*.csv
