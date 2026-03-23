@@ -21,6 +21,6 @@ source cc/bin/activate
 mkdir -p outputs
 
 echo "Running split ${SLURM_ARRAY_TASK_ID}"
-python your_script.py ${SLURM_ARRAY_TASK_ID}
+python perform_ner.py ${SLURM_ARRAY_TASK_ID}
 
 echo "Finished split ${SLURM_ARRAY_TASK_ID}"
