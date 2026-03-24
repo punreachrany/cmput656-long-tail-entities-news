@@ -32,6 +32,15 @@ DATASET_PATH = os.path.join(SPLITS_DIR, split_files[split_id])
 NER_OUT_PATH = f"outputs/ner_output_{split_id}.jsonl"
 PROGRESS_PATH = f"outputs/progress_{split_id}.json"
 WARNINGS_PATH = f"outputs/warnings_{split_id}.json"
+# 👇 ADD IT RIGHT HERE
+os.makedirs("outputs", exist_ok=True)
+
+# (optional initialization)
+for path in [NER_OUT_PATH, PROGRESS_PATH, WARNINGS_PATH]:
+    if not os.path.exists(path):
+        with open(path, "w") as f:
+            if path.endswith(".json"):
+                json.dump([], f)
 
 print(f"Processing split {split_id}: {DATASET_PATH}")
 
