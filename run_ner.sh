@@ -1,9 +1,9 @@
 #!/bin/bash
 #SBATCH --job-name=gliner-ner
 #SBATCH --account=def-cepp
-#SBATCH --gres=gpu:1
+#SBATCH --gres=gpu:nvidia_h100_80gb_hbm3_1g.10gb:1
 #SBATCH --cpus-per-task=4
-#SBATCH --time=04:00:00
+#SBATCH --time=02:00:00
 #SBATCH --array=0-9
 #SBATCH --output=logs/output_%A_%a.log
 #SBATCH --mail-user=rany@ualberta.ca

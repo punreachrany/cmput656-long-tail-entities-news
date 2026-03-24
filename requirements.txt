@@ -17,3 +17,7 @@ gliner
 # Jupyter
 jupyter
 ipywidgets
+
+# Visualization (optional)
+matplotlib
+seaborn

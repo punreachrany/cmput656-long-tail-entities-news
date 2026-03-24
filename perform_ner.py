@@ -4,7 +4,8 @@ from pathlib import Path
 
 import jsonlines
 import pandas as pd
-from tqdm.notebook import tqdm
+# from tqdm.notebook import tqdm
+from tqdm import tqdm
 import matplotlib.pyplot as plt
 import seaborn as sns
 
