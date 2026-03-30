@@ -1,0 +1,15 @@
+========================================
+      DEDUPLICATION SUMMARY REPORT      
+========================================
+
+--- NER DATASET ---
+Total rows before deduplication : 35,760,791
+Total duplicate rows deleted    : 30,990,137
+Total unique rows remaining     : 4,770,654
+
+--- EL DATASET ---
+Total rows before deduplication : 8,704,292
+Total duplicate rows deleted    : 3,982,316
+Total unique rows remaining     : 4,721,976
+
+========================================
