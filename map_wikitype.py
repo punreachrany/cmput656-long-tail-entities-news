@@ -1,11 +1,10 @@
 import pandas as pd
 import torch
 from sentence_transformers import SentenceTransformer, util
-from tqdm import tqdm
 import os
 
-# 1. Your predefined labels
-LABELS = [
+# 1. Your 30 predefined NER labels (The items we want to categorize)
+NER_LABELS = [
     "person", "norp", "facility", "organization", "gpe", "location",
     "product", "event", "work_of_art", "law", "language", "date", "time", 
     "percent", "money", "quantity", "ordinal", "cardinal", "religion", 
@@ -13,42 +12,49 @@ LABELS = [
     "disease", "chemical", "weapon", "vehicle", "currency", "brand"
 ]
 
-# 2. Load a lightweight, super-fast bi-encoder model
-# This uses the exact same matching philosophy as GLiNER
+# 2. ReFinED's 15 coarse types (The buckets we are mapping INTO)
+EL_TYPES = [
+    "PERSON", "WORK_OF_ART", "GPE", "ORG", "FAC", "DATE", 
+    "LANGUAGE", "CARDINAL", "PRODUCT", "EVENT", "PERCENT", 
+    "TIME", "ORDINAL", "QUANTITY", "MONEY"
+]
+
+# Clean up EL_TYPES for better semantic embedding (e.g., "WORK_OF_ART" -> "work of art")
+# We only use this list for the math, the final output will still use the uppercase ones.
+cleaned_el_types = [t.lower().replace("_", " ") for t in EL_TYPES]
+
+# 3. Load the Sentence Transformer
 device = "mps" if torch.backends.mps.is_available() else "cpu"
 print(f"Loading Sentence Transformer on {device}...")
 model = SentenceTransformer('all-MiniLM-L6-v2', device=device)
 
-# 3. Pre-compute the embeddings for your 30 labels (happens instantly)
-print("Embedding labels...")
-label_embeddings = model.encode(LABELS, convert_to_tensor=True)
+# 4. Embed both lists
+print("Embedding ReFinED EL Types...")
+el_type_embeddings = model.encode(cleaned_el_types, convert_to_tensor=True)
 
-# 4. Load your CSV
-CSV_PATH = "tests/master_fine_grain_types.csv"
-if not os.path.exists(CSV_PATH):
-    print(f"❌ Error: File '{CSV_PATH}' not found.")
-    exit(1)
+print("Embedding GLiNER NER Labels...")
+ner_label_embeddings = model.encode(NER_LABELS, convert_to_tensor=True)
 
-df = pd.read_csv(CSV_PATH)
-unique_types = df['el_fine_type'].dropna().unique().tolist()
-print(f"Found {len(unique_types):,} unique fine-grained types.")
+# 5. Classify using Cosine Similarity
+print("Calculating similarities...")
+cosine_scores = util.cos_sim(ner_label_embeddings, el_type_embeddings)
 
 mapping_dict = {}
 
-# 5. Classify using Cosine Similarity
-print("Mapping unique types to predefined labels...")
-# We can process them in one giant batch because Sentence Transformers are so fast
-type_embeddings = model.encode(unique_types, convert_to_tensor=True, show_progress_bar=True)
-
-# Calculate similarity between all types and all labels
-cosine_scores = util.cos_sim(type_embeddings, label_embeddings)
-
-# Find the highest scoring label for each type
-for i in range(len(unique_types)):
-    best_label_idx = torch.argmax(cosine_scores[i]).item()
-    mapping_dict[unique_types[i]] = LABELS[best_label_idx]
+# Find the highest scoring EL_TYPE for each NER_LABEL
+for i in range(len(NER_LABELS)):
+    best_idx = torch.argmax(cosine_scores[i]).item()
+    mapping_dict[NER_LABELS[i]] = EL_TYPES[best_idx]
 
 # 6. Save the mapping
-mapping_df = pd.DataFrame(list(mapping_dict.items()), columns=['el_fine_type', 'mapped_label'])
-mapping_df.to_csv("tests/type_mapping_dictionary_st.csv", index=False)
-print("\n✅ Mapping saved to type_mapping_dictionary_st.csv")
+os.makedirs("tests", exist_ok=True)
+output_path = "tests/ner_to_el_mapping.csv"
+
+mapping_df = pd.DataFrame(list(mapping_dict.items()), columns=['ner_label', 'mapped_el_type'])
+mapping_df.to_csv(output_path, index=False)
+
+print(f"\n✅ Mapping complete! Saved to {output_path}")
+
+# Print a quick preview
+print("\n--- Mapping Preview ---")
+print(mapping_df.head(10).to_string(index=False))

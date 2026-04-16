@@ -1,11 +1,10 @@
 import pandas as pd
 import json
 import os
-from tqdm import tqdm
 
 # ── Config ────────────────────────────────────────────────────────────────────
-INPUT_DIR = "unique_el"
-OUTPUT_FILE = "tests/master_fine_grain_types.csv"
+INPUT_DIR = "unique_refined_el"
+OUTPUT_FILE = "tests/refined_types.csv"
 NUM_FILES = 50 
 
 def process_all_files():
@@ -18,12 +17,12 @@ def process_all_files():
         print(f"Removed existing {OUTPUT_FILE} to start fresh.")
 
     # ── Global Set for Uniqueness ──
-    # We store strings like "ORG||Company" to track what we've already saved
-    seen_pairs = set()
+    # We store strings like "PERSON", "ORG", etc., to track what we've seen
+    seen_types = set()
     first_file = True
 
     for i in range(NUM_FILES):
-        file_path = os.path.join(INPUT_DIR, f"el_output_{i}.jsonl")
+        file_path = os.path.join(INPUT_DIR, f"el_output_refined_{i}.jsonl")
         
         if not os.path.exists(file_path):
             continue
@@ -35,44 +34,37 @@ def process_all_files():
             for line in f:
                 try:
                     obj = json.loads(line)
-                    ner_label = obj.get("ner_label")
-                    coarse = obj.get("el_coarse_type")
-                    fine_types = obj.get("el_fine_types")
+                    
+                    # Grab just the el_type
+                    el_type = obj.get("el_type")
 
-                    if fine_types and isinstance(fine_types, list):
-                        for ft in fine_types:
-                            if not ft: continue
-                            
-                            # Create a unique key for the pair
-                            # We use || as a separator
-                            pair_key = f"{ner_label}||{ft}"
-
-                            if pair_key not in seen_pairs:
-                                chunk_data.append({
-                                    "ner_label": ner_label,
-                                    "el_coarse_type": coarse,
-                                    "el_fine_type": ft
-                                })
-                                # Mark as seen so we never add it again
-                                seen_pairs.add(pair_key)
+                    # Only process if it exists (ignoring null/empty ones)
+                    if el_type:
+                        if el_type not in seen_types:
+                            chunk_data.append({
+                                "el_type": el_type
+                            })
+                            # Mark as seen so we never add it again
+                            seen_types.add(el_type)
                                 
-                except (json.JSONDecodeError, KeyError):
+                except (json.JSONDecodeError, AttributeError):
                     continue
 
         if not chunk_data:
             continue
 
-        # Convert the new unique pairs from this file to a DataFrame
+        # Convert the new unique types from this file to a DataFrame
         df_new_unique = pd.DataFrame(chunk_data)
 
         # Write to CSV in append mode
         df_new_unique.to_csv(OUTPUT_FILE, mode='a', index=False, header=first_file)
         
+        # After the first successful write, we no longer need to write the CSV headers
         first_file = False
-        print(f"   Done. Added {len(df_new_unique):,} NEW unique pairs.")
+        print(f"   Done. Added {len(df_new_unique):,} NEW unique types.")
 
-    print(f"\n✅ Finished! Global unique pairs saved to: {OUTPUT_FILE}")
-    print(f"   Total unique pairs found: {len(seen_pairs):,}")
+    print(f"\n✅ Finished! Global unique types saved to: {OUTPUT_FILE}")
+    print(f"   Total unique types found: {len(seen_types):,}")
 
 if __name__ == "__main__":
     process_all_files()

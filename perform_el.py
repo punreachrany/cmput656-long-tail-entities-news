@@ -29,9 +29,9 @@ PROGRESS_DIR = "unique_el_progress"
 os.makedirs(OUTPUT_DIR, exist_ok=True)
 os.makedirs(PROGRESS_DIR, exist_ok=True)
 
-EL_OUT_PATH      = os.path.join(OUTPUT_DIR, f"el_output_{TASK_ID}.jsonl")
-EL_CSV_PATH      = os.path.join(OUTPUT_DIR, f"el_output_{TASK_ID}.csv")
-EL_PROGRESS_PATH = os.path.join(PROGRESS_DIR, f"el_progress_{TASK_ID}.json")
+EL_OUT_PATH      = os.path.join(OUTPUT_DIR, f"el_output_test_{TASK_ID}.jsonl")
+EL_CSV_PATH      = os.path.join(OUTPUT_DIR, f"el_output_test_{TASK_ID}.csv")
+EL_PROGRESS_PATH = os.path.join(PROGRESS_DIR, f"el_progress_test_{TASK_ID}.json")
 
 # ── Config ────────────────────────────────────────────────────────────────────
 MODEL_NAME = "facebook/genre-linking-blink"
@@ -149,6 +149,7 @@ def main():
             
             with torch.no_grad():
                 outputs = model.generate(**inputs, max_length=32)
+                print("outputs = ", outputs)
             
             decoded_entities = tokenizer.batch_decode(outputs, skip_special_tokens=True)
 
