@@ -18,11 +18,11 @@ if len(sys.argv) < 2:
 TASK_ID = int(sys.argv[1])
 
 # ── Paths ─────────────────────────────────────────────────────────────────────
-INPUT_DIR = "unique_ner"
+INPUT_DIR = "unique_ner_gliner_final"
 NER_CSV_PATH = os.path.join(INPUT_DIR, f"ner_output_{TASK_ID}.csv")
 
-OUTPUT_DIR = "unique_el"
-PROGRESS_DIR = "unique_el_progress" 
+OUTPUT_DIR = "unique_el_final"
+PROGRESS_DIR = "unique_el_progress_final"
 
 os.makedirs(OUTPUT_DIR, exist_ok=True)
 os.makedirs(PROGRESS_DIR, exist_ok=True)
