@@ -17,12 +17,12 @@ from constants import *
 import sys
 
 """
-python3 run_gliner.py -s 0 -i splits -o gliner_outputs
+python3 run_gliner.py -s 1 -i splits -o gliner_outputs
 """
 
 # Set up argparse for dynamic cmd inputs
 parser = argparse.ArgumentParser(description="Run GLiNER NER extraction pipeline.")
-parser.add_argument("-s", "--split_id", type=int, required=True, help="Split index (e.g., from SLURM array)")
+parser.add_argument("-s", "--split_id", type=int, required=True, help="Split number (e.g., 1 to 10)")
 parser.add_argument("-i", "--input_dir", type=str, default="splits", help="Input folder containing JSONL splits")
 parser.add_argument("-o", "--output_dir", type=str, default="gliner_outputs", help="Output folder for results and progress")
 args = parser.parse_args()
@@ -31,18 +31,19 @@ split_id = args.split_id
 SPLITS_DIR = args.input_dir
 OUTPUT_DIR = args.output_dir
 
-# Get sorted list of files
+# Check if input directory exists
 if not os.path.exists(SPLITS_DIR):
     print(f"Error: Input directory '{SPLITS_DIR}' not found.")
     sys.exit(1)
 
-split_files = sorted([f for f in os.listdir(SPLITS_DIR) if f.endswith(".jsonl")])
+# Directly map the split_id to the filename (e.g., 1 -> part_1.jsonl)
+file_name = f"part_{split_id}.jsonl"
+DATASET_PATH = os.path.join(SPLITS_DIR, file_name)
 
-if split_id >= len(split_files):
-    print(f"Error: split_id {split_id} is out of bounds. Only {len(split_files)} files found in {SPLITS_DIR}.")
+# Check if the specific split file exists
+if not os.path.exists(DATASET_PATH):
+    print(f"Error: Dataset file '{DATASET_PATH}' not found. Ensure you passed a valid split number (like 1 to 10).")
     sys.exit(1)
-
-DATASET_PATH = os.path.join(SPLITS_DIR, split_files[split_id])
 
 # Output paths
 os.makedirs(OUTPUT_DIR, exist_ok=True)

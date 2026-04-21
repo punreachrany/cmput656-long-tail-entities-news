@@ -8,7 +8,7 @@ import jsonlines
 from tqdm import tqdm
 
 """
-python3 run_refined.py -t 1 -i unique_ner -o el_outputs
+python3 run_refined.py -t 0 -i unique_ner -o el_outputs
 """
 
 # Import ReFinED

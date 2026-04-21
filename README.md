@@ -105,10 +105,11 @@ Step 1: Download sample-1M.jsonl from signal-1M
 Step 2: Run pip install requirement.txt
 Step 2: Run python3 split_data.py -i sample-1M.jsonl -o splits
 Step 3: Import Hugging Face Token (Optional : But this will speedup Gliner)
-Step 3: Run run_gliner.py 0 to 10
+Step 3: Run python3 run_gliner.py -s 0 -i splits -o gliner_outputs => from 1 to 10
 Step 4: Run python combine.py -f gliner_outputs -o combined_gliner_output.csv
 Step 5: Run python remove_duplicates.py -i gliner_outputs/combined_gliner_output.csv -o gliner_outputs/unique_gliner_output.csv
-Step 6: Run run_refined.py 0 to 10
+Step 6: python3 split_data.py -i gliner_outputs/unique_gliner_output.csv -o unique_ner
+Step 6: Run python3 run_refined.py -t 1 -i unique_ner -o el_outputs => from 1 - 10
 
 ### 1. NER Extraction
 
