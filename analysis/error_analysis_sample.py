@@ -6,7 +6,7 @@ python3 error_analysis_sample.py
 
 # Custom paths
 python3 error_analysis_sample.py \
-  -i unique_el_final/combined_el_output_refined.csv \
+  -i el_outputs/combined_el_output.csv \
   -o error_analysis_sample.csv \
   -n 50
 """
@@ -101,8 +101,8 @@ if __name__ == "__main__":
     )
     parser.add_argument(
         "-i", "--input",
-        default="unique_el_final/combined_el_output_refined.csv",
-        help="Path to combined EL output CSV (default: unique_el_final/combined_el_output_refined.csv)"
+        default="el_outputs/combined_el_output.csv",
+        help="Path to combined EL output CSV (default: el_outputs/combined_el_output.csv)"
     )
     parser.add_argument(
         "-o", "--output",
