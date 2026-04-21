@@ -115,7 +115,7 @@ python3 run_gliner.py -s 1 -i splits -o gliner_outputs
 # repeat with -s 2, 3, ... 10
 ```
 
-### Step 4 — Combine and deduplicate
+### Step 4 — Combine and deduplicate NER
 
 ```bash
 python3 combine.py -f gliner_outputs -o gliner_outputs/combined_gliner_output.csv
@@ -138,7 +138,14 @@ python3 run_refined.py -t 1 -i unique_ner -o el_outputs
 # repeat with -t 2, 3, ... 10
 ```
 
-### Step 7 — Error analysis sample
+### Step 7 — Combine EL
+
+```bash
+python3 combine.py -f el_outputs -o el_outputs/combined_el_output.csv
+
+```
+
+### Step 8 — Error analysis sample
 
 ```bash
 python3 analysis/error_analysis_sample.py

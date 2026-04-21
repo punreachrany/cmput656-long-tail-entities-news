@@ -1,56 +1,71 @@
-import pandas as pd
+import argparse
 import os
+import pandas as pd
 
-# --- CONFIGURATION ---
-INPUT_FILE = "unique_el_final/combined_el_output_refined.csv"
-OUTPUT_FILE = "ner_to_el_frequencies.csv"
+"""
+# Default paths
+python3 count_frequencies.py
 
-def count_type_frequencies():
-    if not os.path.exists(INPUT_FILE):
-        print(f"Error: File '{INPUT_FILE}' not found.")
+# Custom paths
+python3 count_frequencies.py \
+  -i el_outputs/combined_el_output.csv \
+  -o ner_to_el_frequencies.csv
+"""
+
+
+def determine_el_category(row):
+    if not row["el_id"] or str(row["el_id"]).lower() in ["nan", "none"]:
+        return "Unlinkable"
+    if not row["el_type"] or str(row["el_type"]).lower() in ["nan", "none"]:
+        return "NIL"
+    return row["el_type"]
+
+
+def count_type_frequencies(input_file, output_file):
+    if not os.path.exists(input_file):
+        print(f"Error: File '{input_file}' not found.")
         return
 
-    print(f"Loading data from {INPUT_FILE}...")
-    df = pd.read_csv(INPUT_FILE, dtype=str)
-    
-    # Clean the data to prevent mismatched grouping
-    df['ner_type'] = df['ner_type'].fillna("UNKNOWN").str.strip()
-    df['el_id'] = df['el_id'].fillna("").str.strip()
-    df['el_type'] = df['el_type'].fillna("").str.strip()
-    
-    # --- APPLY CLASSIFICATION LOGIC ---
-    def determine_el_category(row):
-        # 1. Unlinkable: el_id is completely empty
-        if not row['el_id'] or str(row['el_id']).lower() in ['nan', 'none']:
-            return "Unlinkable"
-        
-        # 2. NIL: el_id exists, but el_type is empty
-        if not row['el_type'] or str(row['el_type']).lower() in ['nan', 'none']:
-            return "NIL"
-            
-        # 3. Otherwise, return the actual EL tag (CARDINAL, PERSON, ORG, etc.)
-        return row['el_type']
+    print(f"Loading data from {input_file}...")
+    df = pd.read_csv(input_file, dtype=str)
+
+    df["ner_type"] = df["ner_type"].fillna("UNKNOWN").str.strip()
+    df["el_id"]    = df["el_id"].fillna("").str.strip()
+    df["el_type"]  = df["el_type"].fillna("").str.strip()
 
     print("Categorizing EL types...")
-    df['final_el_type'] = df.apply(determine_el_category, axis=1)
-    
-    # --- FREQUENCY LIST ---
+    df["final_el_type"] = df.apply(determine_el_category, axis=1)
+
     print("Calculating frequencies...")
-    # Group by both columns and count the size of each group
-    frequency_df = df.groupby(['ner_type', 'final_el_type']).size().reset_index(name='frequency')
-    
-    # Sort the results alphabetically by NER type, and then by highest frequency
-    frequency_df = frequency_df.sort_values(by=['ner_type', 'frequency'], ascending=[True, False])
-    
-    # Save the result to a CSV
-    frequency_df.to_csv(OUTPUT_FILE, index=False)
-    
-    print(f"\n✅ Done! Full results saved to '{OUTPUT_FILE}'")
-    
+    freq_df = (
+        df.groupby(["ner_type", "final_el_type"])
+        .size()
+        .reset_index(name="frequency")
+        .sort_values(by=["ner_type", "frequency"], ascending=[True, False])
+    )
+
+    freq_df.to_csv(output_file, index=False)
+    print(f"\nDone! Results saved to '{output_file}'")
+
     print("\n--- FULL FREQUENCY RESULTS ---")
-    # Force pandas to print every single row without truncating
-    with pd.option_context('display.max_rows', None, 'display.max_columns', None):
-        print(frequency_df.to_string(index=False))
+    with pd.option_context("display.max_rows", None, "display.max_columns", None):
+        print(freq_df.to_string(index=False))
+
 
 if __name__ == "__main__":
-    count_type_frequencies()
+    parser = argparse.ArgumentParser(
+        description="Count NER-to-EL type frequencies from combined EL output."
+    )
+    parser.add_argument(
+        "-i", "--input",
+        default="el_outputs/combined_el_output.csv",
+        help="Path to combined EL output CSV (default: el_outputs/combined_el_output.csv)"
+    )
+    parser.add_argument(
+        "-o", "--output",
+        default="ner_to_el_frequencies.csv",
+        help="Path to save the frequency report CSV (default: ner_to_el_frequencies.csv)"
+    )
+    args = parser.parse_args()
+
+    count_type_frequencies(args.input, args.output)
