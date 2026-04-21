@@ -26,13 +26,13 @@ split_files = sorted([f for f in os.listdir(SPLITS_DIR) if f.endswith(".jsonl")]
 DATASET_PATH = os.path.join(SPLITS_DIR, split_files[split_id])
 
 # Output paths
-NER_OUT_PATH   = f"outputs/ner_output_{split_id}.jsonl"
-PROGRESS_PATH  = f"outputs/progress_{split_id}.json"
-WARNINGS_PATH  = f"outputs/warnings_{split_id}.json"
-CSV_OUT_PATH   = f"outputs/ner_output_{split_id}.csv"
+NER_OUT_PATH   = f"gliner_outputs/ner_output_{split_id}.jsonl"
+PROGRESS_PATH  = f"gliner_outputs/progress_{split_id}.json"
+WARNINGS_PATH  = f"gliner_outputs/warnings_{split_id}.json"
+CSV_OUT_PATH   = f"gliner_outputs/ner_output_{split_id}.csv"
 
 # Create output dir
-os.makedirs("outputs", exist_ok=True)
+os.makedirs("gliner_outputs", exist_ok=True)
 
 # Initialize files if needed
 for path in [NER_OUT_PATH, PROGRESS_PATH, WARNINGS_PATH]:

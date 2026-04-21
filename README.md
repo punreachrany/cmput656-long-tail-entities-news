@@ -92,22 +92,22 @@ We use a unified 40-type schema combining OntoNotes 5.0 (18 types) and a 22-type
 ### Requirements
 
 ```bash
-pip install gliner refined pandas torch transformers
+pip install gliner pandas torch transformers
+pip install https://github.com/amazon-science/ReFinED/archive/refs/tags/V1.zip
 ```
-
-### Compute Canada (for EL at scale)
-
-```bash
-module load gcc arrow
-source cc/bin/activate
-sbatch el/perform_el.sh
-```
-
-> **Note:** Load `gcc` and `arrow` modules **before** activating the virtual environment or ReFinED will fail to import.
 
 ---
 
+
 ## Reproducing Results
+
+Step 1: Download sample-1M.jsonl from signal-1M
+Step 2: Run utils/split_data.py
+Step 3: Import Hugging Face Token (Optional : But this will speedup Gliner)
+Step 3: Run run_gliner.py 0 to 10
+Step 4: Run python combine.py -f gliner_outputs -o combined_gliner_output.csv
+Step 5: Run python remove_duplicates.py -i gliner_outputs/combined_gliner_output.csv -o gliner_outputs/unique_gliner_output.csv
+Step 6: Run run_refined.py 0 to 10
 
 ### 1. NER Extraction
 

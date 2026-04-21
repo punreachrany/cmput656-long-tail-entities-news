@@ -1,5 +1,6 @@
 import os
 import pandas as pd
+import argparse
 
 def remove_duplicates_from_csv(input_file, output_file):
     print(f"Reading data from {input_file}...")
@@ -8,7 +9,7 @@ def remove_duplicates_from_csv(input_file, output_file):
     except FileNotFoundError:
         print(f"Error: The file {input_file} was not found.")
         return
-
+    
     original_count = len(df)
     print(f"Total rows loaded: {original_count}")
     
@@ -41,8 +42,25 @@ def remove_duplicates_from_csv(input_file, output_file):
 
 # --- Run the script ---
 if __name__ == "__main__":
-    # Update these paths if your folder is named differently
-    INPUT_FILE = "outputs_gliner/combined_ner_output.csv"
-    OUTPUT_FILE = "outputs_gliner/unique_ner_output.csv"
+    # Set up the argument parser
+    parser = argparse.ArgumentParser(description="Remove duplicates from NER output CSV.")
     
-    remove_duplicates_from_csv(INPUT_FILE, OUTPUT_FILE)
+    # Add arguments for input and output files
+    parser.add_argument(
+        "-i", "--input", 
+        type=str, 
+        required=True, 
+        help="The path to the input CSV file (e.g., outputs_gliner/combined_ner_output.csv)."
+    )
+    parser.add_argument(
+        "-o", "--output", 
+        type=str, 
+        required=True, 
+        help="The path to save the cleaned output CSV file (e.g., outputs_gliner/unique_ner_output.csv)."
+    )
+    
+    # Parse the arguments
+    args = parser.parse_args()
+    
+    # Run the function with the parsed arguments
+    remove_duplicates_from_csv(args.input, args.output)
