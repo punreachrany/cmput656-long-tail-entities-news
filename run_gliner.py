@@ -1,5 +1,6 @@
 # ── Section 0: Imports & Config ──────────────────────────────────────────────
 import json, os, re
+import argparse
 from pathlib import Path
 
 import jsonlines
@@ -15,24 +16,41 @@ import torch
 from constants import *
 import sys
 
-# Get split index from SLURM
-split_id = int(sys.argv[1])
+"""
+python3 run_gliner.py -s 0 -i splits -o gliner_outputs
+"""
 
-# Input splits folder
-SPLITS_DIR = "splits"
+# Set up argparse for dynamic cmd inputs
+parser = argparse.ArgumentParser(description="Run GLiNER NER extraction pipeline.")
+parser.add_argument("-s", "--split_id", type=int, required=True, help="Split index (e.g., from SLURM array)")
+parser.add_argument("-i", "--input_dir", type=str, default="splits", help="Input folder containing JSONL splits")
+parser.add_argument("-o", "--output_dir", type=str, default="gliner_outputs", help="Output folder for results and progress")
+args = parser.parse_args()
+
+split_id = args.split_id
+SPLITS_DIR = args.input_dir
+OUTPUT_DIR = args.output_dir
 
 # Get sorted list of files
+if not os.path.exists(SPLITS_DIR):
+    print(f"Error: Input directory '{SPLITS_DIR}' not found.")
+    sys.exit(1)
+
 split_files = sorted([f for f in os.listdir(SPLITS_DIR) if f.endswith(".jsonl")])
+
+if split_id >= len(split_files):
+    print(f"Error: split_id {split_id} is out of bounds. Only {len(split_files)} files found in {SPLITS_DIR}.")
+    sys.exit(1)
+
 DATASET_PATH = os.path.join(SPLITS_DIR, split_files[split_id])
 
 # Output paths
-NER_OUT_PATH   = f"gliner_outputs/ner_output_{split_id}.jsonl"
-PROGRESS_PATH  = f"gliner_outputs/progress_{split_id}.json"
-WARNINGS_PATH  = f"gliner_outputs/warnings_{split_id}.json"
-CSV_OUT_PATH   = f"gliner_outputs/ner_output_{split_id}.csv"
+os.makedirs(OUTPUT_DIR, exist_ok=True)
 
-# Create output dir
-os.makedirs("gliner_outputs", exist_ok=True)
+NER_OUT_PATH   = os.path.join(OUTPUT_DIR, f"ner_output_{split_id}.jsonl")
+PROGRESS_PATH  = os.path.join(OUTPUT_DIR, f"progress_{split_id}.json")
+WARNINGS_PATH  = os.path.join(OUTPUT_DIR, f"warnings_{split_id}.json")
+CSV_OUT_PATH   = os.path.join(OUTPUT_DIR, f"ner_output_{split_id}.csv")
 
 # Initialize files if needed
 for path in [NER_OUT_PATH, PROGRESS_PATH, WARNINGS_PATH]:
@@ -47,6 +65,7 @@ if not os.path.exists(CSV_OUT_PATH):
         .to_csv(CSV_OUT_PATH, index=False)
 
 print(f"Processing split {split_id}: {DATASET_PATH}")
+print(f"Saving outputs to: {OUTPUT_DIR}")
 
 DEVICE = "cuda" if torch.cuda.is_available() else "cpu"
 print(f"Using device: {DEVICE}")
@@ -248,4 +267,5 @@ def run_ner_pipeline(max_articles=None):
 
 
 # ── Run ─────────────────────────────────────────────────────────────────────
-run_ner_pipeline()
+if __name__ == "__main__":
+    run_ner_pipeline()

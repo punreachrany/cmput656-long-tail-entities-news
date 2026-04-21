@@ -102,7 +102,8 @@ pip install https://github.com/amazon-science/ReFinED/archive/refs/tags/V1.zip
 ## Reproducing Results
 
 Step 1: Download sample-1M.jsonl from signal-1M
-Step 2: Run utils/split_data.py
+Step 2: Run pip install requirement.txt
+Step 2: Run python3 split_data.py -i sample-1M.jsonl -o splits
 Step 3: Import Hugging Face Token (Optional : But this will speedup Gliner)
 Step 3: Run run_gliner.py 0 to 10
 Step 4: Run python combine.py -f gliner_outputs -o combined_gliner_output.csv
