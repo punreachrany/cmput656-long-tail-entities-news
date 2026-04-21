@@ -1,115 +1,182 @@
 # A Fine-Grained Study of Long-Tail Entities in News Articles
 
-## Project Overview
-
-TODO
-
----
-
-## Dataset
-
-- **Signal-1M (Signal Media One Million News Articles)**  
-  A large-scale news corpus commonly used for entity-centric research.  
-  https://research.signal-ai.com/newsir16/signal-dataset.html
+**Punreach Rany and Denilson Barbosa**  
+Department of Computing Science, University of Alberta  
+`{rany, denilson}@ualberta.ca`
 
 ---
 
-## 🧠 Methods
+## Overview
 
-### Named Entity Recognition (NER)
-TODO : Will pick one of them
+This repository contains the code and data for our study of long-tail entities in one million English news articles from the [Signal-1M](https://research.signal-ai.com/datasets/signal1m-tweetir.html) corpus.
 
-| Tool | Default Schema | # of Types | Granularity | Key Feature |
-| :--- | :--- | :--- | :--- | :--- |
-| **Stanford NER** | Stanford 3/4/7-Class | 3, 4, or 7 | Coarse | Baseline |
-| **spaCy** | OntoNotes 5.0 | 18 | Semi | Python |
-| **Stanza** | OntoNotes 5.0 | 18 | Semi | - |
-| **NameTag 3** | OntoNotes 5.0 (Eng) | 18 | Semi | **SOTA** for *Nested* entities & Multilingual. |
-| **FIGER** | FIGER System | 112 | Fine | Hierarchical (e.g., `/person/politician`). |
-| **GLiNER** | **Open Vocabulary** | $\infty$ | **Custom** | Zero-shot, can be customized. |
+We find that **57–76% of unique named entity mentions in news text cannot be linked to Wikipedia**, and that this gap is structured by entity type — concentrated in Product, Event, and Miscellaneous types, with fine-grained rates ranging from 52% (Politician) to 97% (Law).
 
 ---
 
-#### 1. Stanford NER (The Classic)
+## Pipeline
 
-* **3-Class Model:** `PERSON`, `ORGANIZATION`, `LOCATION`
-* **4-Class Model:** `PERSON`, `ORGANIZATION`, `LOCATION`, `MISC`
-* **7-Class Model:**
-    * `PERSON`
-    * `ORGANIZATION`
-    * `LOCATION`
-    * `MONEY`
-    * `PERCENT`
-    * `DATE`
-    * `TIME`
-
-#### 2. spaCy & Stanza (The Industry Standard)
-Both tools utilize the **OntoNotes 5.0** corpus for their large English models (`en_core_web_trf` / `en`). This provides **18 flat categories**.
-
-**The 18 Types:**
-* **PEOPLE:** `PERSON` (People, including fictional)
-* **ORG:** `ORG` (Companies, agencies, institutions)
-* **GROUPS:** `NORP` (Nationalities, religious or political groups)
-* **GEOGRAPHY:** `GPE` (Countries, cities, states), `LOC` (Non-GPE: mountains, bodies of water)
-* **STRUCTURES:** `FAC` (Buildings, airports, highways, bridges)
-* **OBJECTS:** `PRODUCT` (Vehicles, foods, weapons - *not services*)
-* **HAPPENINGS:** `EVENT` (Hurricanes, battles, wars, sports events)
-* **ARTS:** `WORK_OF_ART` (Books, songs, paintings)
-* **LEGAL:** `LAW` (Named documents made into laws)
-* **LANG:** `LANGUAGE` (Any named language)
-* **NUMERIC/TEMPORAL:** `DATE`, `TIME`, `PERCENT`, `MONEY`, `QUANTITY`, `ORDINAL`, `CARDINAL`
-
-#### 3. NameTag 3 (The Modern SOTA)
-[NameTag 3](https://github.com/ufal/nametag3) is ACL Proceeding in 2025 and multilingual.
-
-**English Models:**
-* **OntoNotes Model (Recommended):** Supports the same **18 types** listed above for spaCy.
-* **CoNLL Model:** Supports the basic **4 types** (`PER`, `ORG`, `LOC`, `MISC`).
-
-#### 4. FIGER
-FIGER has a **2-level hierarchy** with **112 types**.
-
-**Common Examples (Level 1 / Level 2):**
-* `/person` -> `/person/politician`, `/person/athlete`, `/person/actor`, `/person/author`
-* `/organization` -> `/organization/company`, `/organization/educational_institution`, `/organization/sports_team`
-* `/location` -> `/location/city`, `/location/province`, `/location/bridge`
-* `/art` -> `/art/film`, `/art/music`
-* `/product` -> `/product/software`, `/product/engine`
-* `/building` -> `/building/hospital`, `/building/library`
-
-#### 5. GLiNER
-GLiNER does **not** have a default list. It uses a "Prompt-based" approach where you provide the list of labels at runtime.
-
-**How to use it:**
-You define a Python list with *any* strings you want:
-```python
-labels = ["Politician", "Start-up", "Algorithm", "Food Ingredient"]
+```
+Signal-1M corpus (1M articles)
+        │
+        ▼
+  GLiNER NER (40-type schema)
+  38.11M raw mentions
+        │
+        ▼
+  Deduplication on (text, type) pairs
+  5.4M unique entities
+        │
+        ▼
+  ReFinED Entity Linking → Wikipedia
+        │
+        ▼
+  Outcome classification: Match / Mismatch / NIL / No Overlap
 ```
 
+### Models
 
-### Entity Linking (EL)
-- **BLINK (by Meta AI)**  
-  Used to link detected entities to Wikipedia, based on fine-tuned BERT architectures
-  https://github.com/facebookresearch/BLINK
+| Stage | Model | Notes |
+|---|---|---|
+| NER | `urchade/gliner_large-v2.1` | Zero-shot, 40-type custom schema |
+| EL | `ReFinED` (`wikipedia_model_with_numbers`) | Joint typing + disambiguation |
+
+### Entity Type Schema
+
+We use a unified 40-type schema combining OntoNotes 5.0 (18 types) and a 22-type subset of FIGER:
+
+| Coarse Type | Fine-Grained Types |
+|---|---|
+| PERSON | Person, Politician, Athlete, Military Person, Religious Leader |
+| LOCATION | GPE, Location, Facility |
+| ORGANIZATION | Organization, Political Party, Government Agency, Sports Team, Website, Norp |
+| EVENT | Event, Election, Military Conflict, Natural Disaster, Sports Event |
+| PRODUCT | Product, Weapon, Vehicle, Disease, Chemical Thing, Living Thing |
+| WORK OF ART | Work of Art, Film, Music, Written Work |
+| NUMERIC | Date, Time, Percent, Money, Quantity, Ordinal, Cardinal |
+| MISCELLANEOUS | Religion, Ethnicity, Language, Law |
 
 ---
 
-## Output
+## Repository Structure
 
-- Detection of long-tail entities in news articles  
-- Construction of a **fine-grained entity taxonomy**
+```
+.
+├── ner/
+│   ├── run_ner.py              # GLiNER extraction pipeline
+│   └── ner_outputs/            # Per-shard NER outputs (CSV)
+│
+├── el/
+│   ├── perform_el.py           # ReFinED EL pipeline (SLURM array job)
+│   ├── perform_el.sh           # SLURM job script
+│   └── el_raw_outputs/         # Per-shard EL outputs (JSONL + CSV)
+│
+├── analysis/
+│   ├── combine_dedup.py        # Combine + deduplicate NER outputs
+│   ├── coarse_stats.py         # Compute coarse/fine-grained outcome tables
+│   ├── dedup_comparison.py     # Reproduce prior work NER + dedup comparison
+│   └── error_analysis_sample.py # Stratified sampling for manual annotation
+│
+├── data/
+│   ├── unique_el_final/
+│   │   └── combined_el_output_refined.csv   # Final 5.4M unique linked entities
+│   └── error_analysis_sample.csv            # 450-entity annotation sample
+│
+└── README.md
+```
 
 ---
 
-## 📚 Related Work
+## Setup
 
-- Esquivel, J., Albakour, D., Martinez, M., Corney, D., & Moussa, S.  
-  *On the Long-Tail Entities in News*
+### Requirements
+
+```bash
+pip install gliner refined pandas torch transformers
+```
+
+### Compute Canada (for EL at scale)
+
+```bash
+module load gcc arrow
+source cc/bin/activate
+sbatch el/perform_el.sh
+```
+
+> **Note:** Load `gcc` and `arrow` modules **before** activating the virtual environment or ReFinED will fail to import.
 
 ---
 
-## Tools
+## Reproducing Results
 
-- Python  
-- TODO: Select an NER 
-- BLINK (Meta AI)
+### 1. NER Extraction
+
+```bash
+python ner/run_ner.py
+# Outputs: ner_outputs/ner_output_{0-9}.csv
+# Progress saved to: ner_progress.json
+```
+
+### 2. Deduplication
+
+```bash
+python analysis/combine_dedup.py
+# Output: combine_unique_ner.csv (5.4M unique pairs)
+```
+
+### 3. Entity Linking
+
+```bash
+# Local (parallel, 4 workers)
+python el/run_parallel.py
+
+# Compute Canada (SLURM array, tasks 0-9)
+sbatch el/perform_el.sh
+```
+
+### 4. Analysis
+
+```bash
+# Coarse and fine-grained outcome tables
+python analysis/coarse_stats.py
+
+# Deduplication comparison with Esquivel et al. (2017)
+python analysis/dedup_comparison.py
+
+# Error analysis sample (450 entities, 3×3 NER×EL grid)
+python analysis/error_analysis_sample.py
+```
+
+---
+
+## Key Results
+
+| Coarse Type | Total | Match (%) | NIL (%) | No Overlap (%) |
+|---|---|---|---|---|
+| Location | 654,449 | 23.83 | 12.21 | 57.32 |
+| Person | 1,478,994 | 22.49 | 4.55 | 68.01 |
+| Work of Art | 247,613 | 18.58 | 16.00 | 57.82 |
+| Organization | 1,313,672 | 13.40 | 12.99 | 67.42 |
+| Event | 316,419 | 4.34 | 15.44 | 75.85 |
+| Product | 601,014 | 0.01 | 21.58 | 71.70 |
+
+---
+
+## Citation
+
+If you use this code or data, please cite:
+
+```bibtex
+@inproceedings{rany2025longtail,
+  title     = {A Fine-Grained Study of Long-Tail Entities in News Articles},
+  author    = {Rany, Punreach and Barbosa, Denilson},
+  year      = {2025},
+  institution = {University of Alberta}
+}
+```
+
+---
+
+## License
+
+This project is for academic use. The Signal-1M dataset is subject to its own [terms of use](https://research.signal-ai.com/datasets/signal1m-tweetir.html).
