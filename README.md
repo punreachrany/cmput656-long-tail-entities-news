@@ -8,7 +8,7 @@ Department of Computing Science, University of Alberta
 
 ## Overview
 
-This repository contains the full pipeline for our study of long-tail entities in one million English news articles from the [Signal-1M](https://research.signal-ai.com/datasets/signal1m-tweetir.html) corpus. We use a 40-type NER schema with [GLiNER](https://github.com/urchade/GLiNER) and [ReFinED](https://github.com/amazon-science/ReFinED) to link entity mentions to Wikipedia, measuring how much of the entity space falls outside existing knowledge bases.
+This repository contains the full pipeline for our study of long-tail entities in one million English news articles from the [Signal-1M](https://research.signal-ai.com/newsir16/signal-dataset.html) corpus. We use a 40-type NER schema with [GLiNER](https://github.com/urchade/GLiNER) and [ReFinED](https://github.com/amazon-science/ReFinED) to link entity mentions to Wikipedia, measuring how much of the entity space falls outside existing knowledge bases.
 
 **Key finding:** 57–76% of unique named entity mentions in news text cannot be linked to Wikipedia, with the gap concentrated in Product, Event, and Miscellaneous types.
 
@@ -61,23 +61,28 @@ Signal-1M (1M articles)
 
 ```
 .
-├── split_data.py                     # Split Signal-1M or NER output into shards
-├── run_gliner.py                     # GLiNER NER extraction (per shard)
-├── combine.py                        # Combine per-shard NER outputs
-├── constants.py                      # Constant value
-├── remove_duplicates.py              # Deduplicate (text, type) pairs
-├── run_refined.py                    # ReFinED EL (per shard)
+├── split_data.py              # Split Signal-1M or NER output into shards
+├── run_gliner.py              # GLiNER NER extraction (per shard)
+├── combine.py                 # Combine per-shard NER or EL outputs
+├── remove_duplicates.py       # Deduplicate (text, type) pairs
+├── run_refined.py             # ReFinED EL (per shard)
+├── constants.py               # Shared constants (LABELS list, etc.)
 │
 ├── gliner_outputs/
-│   ├── combined_gliner_output.csv    # All raw NER mentions (38.11M)
-│   └── unique_gliner_output.csv      # Deduplicated NER mentions (5.4M)
+│   ├── combined_gliner_output.csv   # All raw NER mentions (38.11M)
+│   └── unique_gliner_output.csv     # Deduplicated NER mentions (5.4M)
 │
-├── unique_ner/                       # Deduplicated NER shards (input to EL)
-├── el_outputs/                       # Per-shard EL outputs
+├── unique_ner/                # Deduplicated NER shards (input to EL)
+├── el_outputs/
+│   └── combined_el_output.csv       # Combined EL output
 │
 ├── analysis/
-│   └── error_analysis_sample.py     # Stratified 450-entity annotation sample
+│   ├── ner_report.py              # Label count report from NER output
+│   ├── count_type_frequency.py    # NER × EL type frequency table
+│   └── error_analysis_sample.py   # Stratified 450-entity annotation sample
 │
+├── sample-1M.jsonl                # Signal-1M news dataset
+├── paper.pdf                      # A Fine-Grained Study of Long-Tail Entities in News Articles.pdf
 ├── requirements.txt
 └── README.md
 ```
@@ -138,19 +143,41 @@ python3 run_refined.py -t 1 -i unique_ner -o el_outputs
 # repeat with -t 2, 3, ... 10
 ```
 
-### Step 7 — Combine EL
+### Step 7 — Combine EL outputs
 
 ```bash
 python3 combine.py -f el_outputs -o el_outputs/combined_el_output.csv
-
 ```
 
-### Step 8 — Error analysis sample
+---
 
+## Analysis
+
+All analysis scripts live in the `analysis/` folder.
+
+**NER label report** — counts how many times each entity type was extracted:
 ```bash
-python3 analysis/error_analysis_sample.py
-# Output: error_analysis_sample.csv (450 entities, 3x3 NER x EL grid)
+python3 analysis/ner_report.py \
+  -i gliner_outputs/combined_gliner_output.csv \
+  -o gliner_outputs/combined_ner_report.csv
 ```
+
+**NER × EL frequency table** — for each NER type, counts how many entities were linked to each EL type (PERSON, ORG, GPE, etc.), NIL, or Unlinkable:
+```bash
+python3 analysis/count_type_frequency.py \
+  -i el_outputs/combined_el_output.csv \
+  -o ner_to_el_frequencies.csv
+```
+
+**Error analysis sample** — stratified sample of 50 entities per NER × EL type cell (3×3 grid = 450 total) for manual annotation:
+```bash
+python3 analysis/error_analysis_sample.py \
+  -i el_outputs/combined_el_output.csv \
+  -o error_analysis_sample.csv \
+  -n 50
+```
+
+The output CSV includes `correct` and `notes` columns for manual annotation. Each row should be labelled as **Both Correct**, **NER Correct** (NER label right, EL entity wrong), or **EL Correct** (EL entity right, NER label wrong).
 
 ---
 
@@ -163,7 +190,7 @@ python3 analysis/error_analysis_sample.py
 | Work of Art | 247,613 | 18.58 | 16.00 | 57.82 |
 | Organization | 1,313,672 | 13.40 | 12.99 | 67.42 |
 | Event | 316,419 | 4.34 | 15.44 | 75.85 |
-| Miscellaneous | 157,669  | 0.57 | 24.09 | 69.81 |
+| Miscellaneous | 157,669 | 0.57 | 24.09 | 69.81 |
 | Product | 601,014 | 0.01 | 21.58 | 71.70 |
 
 Both NIL and No Overlap are treated as long-tail signals. NIL entities exist in Wikipedia but lack a Wikidata type; No Overlap entities are absent from Wikipedia entirely.
