@@ -4,7 +4,7 @@ import pandas as pd
 from constants import LABELS
 
 """
-python3 generate_report.py -i outputs_gliner/combined_ner_output.csv -o outputs_gliner/combined_ner_report.csv
+python3 ner_report.py -i outputs_gliner/combined_ner_output.csv -o outputs_gliner/combined_ner_report.csv
 """
 
 
